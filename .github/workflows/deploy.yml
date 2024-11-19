@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  deploy:
+  deploy-gh-pages:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -33,7 +33,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./
           destination_dir: ./
-          exclude_assets: "projects/*"
+          exclude_assets: "projects,about"
 
       - name: Deploy to `/projects`
         uses: peaceiris/actions-gh-pages@v4
