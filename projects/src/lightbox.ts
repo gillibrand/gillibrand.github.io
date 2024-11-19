@@ -50,11 +50,9 @@ async function openLightbox(photo: HTMLImageElement) {
     closeLightbox();
   });
 
-  lightbox.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      e.preventDefault();
-      closeLightbox();
-    }
+  lightbox.addEventListener("cancel", (e) => {
+    e.preventDefault();
+    closeLightbox();
   });
 
   document.body.appendChild(lightbox);

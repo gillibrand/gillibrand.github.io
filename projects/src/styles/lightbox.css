@@ -49,10 +49,6 @@ dialog.lightbox {
   }
 }
 
-.lightbox__photo {
-  /* z-index: 1; */
-}
-
 .lightbox__text {
   opacity: 1;
   transition: opacity ease 300ms;

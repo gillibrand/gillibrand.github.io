@@ -128,6 +128,7 @@ img {
   border: solid 10px white;
   box-shadow: 3px 3px 10px var(--border-color);
   user-select: none;
+  -webkit-user-select: none;
   position: relative;
 }
 
