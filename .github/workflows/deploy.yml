@@ -8,6 +8,8 @@ on:
 jobs:
   deploy-gh-pages:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -37,6 +39,7 @@ jobs:
 
       - name: Deploy to `/projects`
         uses: peaceiris/actions-gh-pages@v4
+        if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./projects/dist
