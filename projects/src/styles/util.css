@@ -1,0 +1,27 @@
+.float-right {
+  float: right;
+}
+
+.relative {
+  position: relative;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.sticky {
+  position: sticky;
+}
+
+.ms-4 {
+  margin-inline-start: 1rem;
+}
+
+.me-4 {
+  margin-inline-end: 1rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
