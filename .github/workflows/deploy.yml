@@ -33,7 +33,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./
           destination_dir: ./
-          exclude_assets: "projects,about"
+          exclude_assets: ".github,projects,about"
 
       - name: Deploy to `/projects`
         uses: peaceiris/actions-gh-pages@v4
