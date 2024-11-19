@@ -1,9 +1,9 @@
-name: Deploy Projects to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main # Replace with your default branch if different
+      - main
 
 jobs:
   deploy:
@@ -17,17 +17,17 @@ jobs:
         with:
           node-version: 22.11.0 # Adjust as per your Node.js version
 
-      - name: Install dependencies
+      - name: Install `projects`
         run: |
-          cd about
+          cd projects
           npm ci
 
-      - name: Build project
+      - name: Build `projects`
         run: |
-          cd about
+          cd projects
           npm run build
 
-      - name: Deploy static root files to GitHub Pages
+      - name: Deploy root files
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -35,9 +35,9 @@ jobs:
           destination_dir: ./
           exclude_assets: "projects/*"
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy to `/projects`
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: about/dist
-          destination_dir: about
+          publish_dir: ./projects/dist
+          destination_dir: projects
