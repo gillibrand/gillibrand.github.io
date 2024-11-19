@@ -1,0 +1,43 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-gh-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22.11.0 # Adjust as per your Node.js version
+
+      - name: Install `projects`
+        run: |
+          cd projects
+          npm ci
+
+      - name: Build `projects`
+        run: |
+          cd projects
+          npm run build
+
+      - name: Deploy root files
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          destination_dir: ./
+          exclude_assets: "projects,about"
+
+      - name: Deploy to `/projects`
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./projects/dist
+          destination_dir: projects
