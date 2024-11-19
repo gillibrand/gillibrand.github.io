@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  deploy-gh-pages:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -27,6 +27,9 @@ jobs:
           cd projects
           npm run build
 
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
       - name: Deploy root files
         uses: peaceiris/actions-gh-pages@v4
         with:
