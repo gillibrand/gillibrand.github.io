@@ -28,7 +28,9 @@ function initToc() {
     }
 
     linkFrags.push(
-      `<li><a class="${classNames.join(" ")}" data-to="${sectionId}" href="#${sectionId}">${sectionTitle}</a></li>`
+      `<li><a class="${classNames.join(" ")}" data-to="${sectionId}" href="#${sectionId}">
+        <span>${sectionTitle}</span>
+        </a></li>`
     );
   });
 

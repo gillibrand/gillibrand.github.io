@@ -21,17 +21,9 @@ header {
     border-bottom: solid 4px var(--border-color);
   }
 
-  #hamburger {
-    height: 35px;
-    width: 35px;
-    border-radius: 0;
-    appearance: none;
-  }
-
   h1 {
     border: none;
     margin: 0;
-    padding: 0;
   }
 
   @media (width > 768px) {
@@ -70,6 +62,46 @@ header {
   }
 }
 
+.hamburger {
+  width: 2rem;
+  height: 1.5rem;
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  justify-content: space-between;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: solid 4px var(--border-color);
+    outline-offset: 4px;
+  }
+}
+
+.hamburger__line {
+  height: 0.25rem;
+  width: 100%;
+  background-color: black;
+  transition: transform ease 200ms, opacity ease 200ms;
+
+  body.nav-open & {
+    &:first-child {
+      transform: translateY(10px) rotate(45deg);
+    }
+
+    &:last-child {
+      transform: translateY(-10px) rotate(-45deg);
+    }
+
+    &:nth-child(2) {
+      transform: scaleX(0);
+      opacity: 0;
+    }
+  }
+}
+
 .toc {
   list-style: none;
   padding: 0;
@@ -94,15 +126,10 @@ header {
   text-decoration: none;
   color: black;
   display: block;
-  /* border-radius: 4px; */
   padding: 0 1.25rem 0 3rem;
   line-height: 2;
   margin-left: -1rem;
   position: relative;
-
-  /* border-start-end-radius: 100px; */
-  /* border-end-end-radius: 100px; */
-  /* border-radius: 100; */
 
   clip-path: polygon(0 0, calc(100% - 0.5rem) 0, 100% 50%, calc(100% - 0.5rem) 100%, 0 100%);
 
@@ -122,6 +149,15 @@ header {
     translate: 0 -50%;
   }
 
+  &:hover,
+  &:focus-visible {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  &:active {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
   &.is-selected {
     background-color: rgba(255, 255, 255, 0.4);
 
@@ -130,12 +166,17 @@ header {
     }
   }
 
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+  &:focus-visible {
+    outline: none;
+    span {
+      /* span is just there to show the outline since the parent a is clipped to a shape */
+      outline: solid 2px black;
+    }
   }
 
-  &:active {
-    background-color: rgba(255, 255, 255, 0.3);
+  & span {
+    /* span cannot receive clicks or it blocks focus of the paren anchor */
+    pointer-events: none;
   }
 }
 
