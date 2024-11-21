@@ -15,10 +15,13 @@ function htmlToDom(html: string) {
 }
 
 async function buildLightbox(photo: HTMLImageElement) {
+  const figure = photo.closest("figure");
+  const caption = figure?.querySelector("figcaption");
+
   const html = `
     <dialog class="lightbox">
-      <img class="lightbox__photo photo" src="${photo.src}" >
-      <p class="lightbox__text invisible">example text</p>
+      <img class="lightbox__photo photo" src="${photo.currentSrc}" >
+      <p class="lightbox__text opacity-0">${caption?.textContent || ""}</p>
     </dialog>`;
 
   const lightbox = htmlToDom(html) as HTMLDialogElement;
@@ -31,7 +34,7 @@ async function buildLightbox(photo: HTMLImageElement) {
     });
 
     newPhoto.addEventListener("error", (error) => {
-      throw new Error("img not loaded. Skipping " + photo.src);
+      throw new Error("img not loaded. Skipping " + photo.currentSrc);
     });
   });
 }
@@ -85,11 +88,11 @@ async function openLightbox(photo: HTMLImageElement) {
     animOptions
   );
 
-  text.classList.remove("invisible");
+  text.classList.remove("opacity-0");
 
   async function closeLightbox() {
     scaleAnim.cancel();
-    text.classList.add("invisible");
+    text.classList.add("opacity-0");
 
     newPhoto.style.borderWidth = `${10 / scaleH}px`;
 

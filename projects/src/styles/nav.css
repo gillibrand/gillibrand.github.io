@@ -8,7 +8,7 @@ header {
   html.modal-open & {
     inset-inline-end: var(--scrollbar-width);
   }
-  /* height: 4rem; */
+  min-height: 3.5rem;
   z-index: 2;
   /* box-shadow: 0 0 8px rgba(0, 0, 0, 0.7); */
   padding-inline: 1rem;
@@ -33,12 +33,13 @@ header {
 
 .sidebar {
   nav {
+    /* font-family: monospace; */
     position: fixed;
     top: 2rem;
   }
 
   @media (max-width: 768px) {
-    top: 4rem;
+    top: 3.5rem;
     left: 0rem;
     padding: 2rem;
     bottom: 0;
@@ -182,4 +183,14 @@ header {
 
 .toc__entry--group {
   padding-left: 2rem;
+}
+
+.menu-dialog {
+  position: fixed;
+  border: none;
+  /* inset: 3.5rem 0 0 0; */
+  top: 3.5rem;
+  /* height: auto; */
+  /* width: auto; */
+  max-width: auto;
 }

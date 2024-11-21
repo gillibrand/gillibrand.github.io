@@ -1,6 +1,6 @@
 const toc = document.getElementById("toc") as HTMLUListElement;
 
-function markActive(a?: HTMLAnchorElement | HTMLHeadingElement) {
+function markSelected(a?: HTMLAnchorElement | HTMLHeadingElement) {
   if (!a) return;
 
   if (a.nodeName !== "A") {
@@ -66,7 +66,7 @@ function initIntersectionObserver() {
         const section = heading.parentElement as HTMLElement;
         const sectionId = section.id;
         const a = document.querySelector(`[data-to="${sectionId}"]`) as HTMLAnchorElement;
-        markActive(a);
+        markSelected(a);
       }
     });
   }
@@ -86,7 +86,7 @@ function initIntersectionObserver() {
   const top = document.documentElement.scrollTop;
   for (const heading of headings.reverse()) {
     if (heading.offsetTop < top) {
-      markActive(heading);
+      markSelected(heading);
       break;
     }
   }

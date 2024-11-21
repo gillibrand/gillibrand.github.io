@@ -7,7 +7,7 @@
     <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png" />
     <title>Jay / Projects</title>
   </head>
-  <body class="nav-open">
+  <body>
     <header>
       <div class="inner-header">
         <button class="hamburger" id="hamburger">
@@ -19,8 +19,8 @@
       </div>
     </header>
 
-    <div class="cols">
-      <aside class="sidebar">
+    <div class="cols" id="cols">
+      <aside class="sidebar" id="sidebar">
         <nav>
           <ul class="toc" id="toc">
             <!-- JavaScript inserted -->
@@ -47,7 +47,7 @@
 
           <dl class="skill-grid">
             <dt>Web</dt>
-            <dd>Extensive experience with rich web apps in React, TypeScript, Dojo, vanilla JS</dd>
+            <dd>Extensive experience with rich web apps in React, TypeScript, Dojo, vanilla JavaScript</dd>
 
             <dt>Java</dt>
             <dd>REST APIs, multithreaded services</dd>
@@ -61,48 +61,87 @@
         <section id="gcm">
           <h2 data-alt="GCM">Global Configuration Management (GCM)</h2>
           <p>
-            GCM is part of the
+            GCM manages versioned artifacts across apps in the
             <a href="https://www.ibm.com/products/engineering-lifecycle-management"
               >IBM Engineering Lifecycle Management</a
             >
-            (ELM) suite. It manages branches of versioned artifacts across multiple apps.
-          </p>
-          <p>
-            I wrote and maintained the majority of its web UI, the REST services between the UI and backend APIs, and
-            some backend Java services.
+            (ELM) suite. I wrote and maintained most of its <strong>web UI</strong>, many
+            <strong>REST services</strong>, and some of the <strong>Java backend services</strong>.
           </p>
         </section>
 
         <!-- TREE -->
         <section id="tree-component">
           <h3>Tree Component</h3>
-          <img src="images/tree.png" alt="query editor" class="photo" width="1438" height="514" loading="eager" />
+
+          <p>
+            I wrote GCM's main tree component to support <strong>async lazy-loading</strong>,
+            <strong>fast re-renders</strong>, <strong>animated state changes</strong>,
+            <strong>keyboard navigation</strong>, <strong>accessibility</strong>, <strong>multi-select</strong>,
+            <strong>drag-and-drop</strong>, and more.
+
+            <!-- <div class="tag-cloud">
+              <span>lazy-loading</span>
+              <span>fast re-render</span>
+              <span>animations</span>
+              <span>keyboard navigation</span>
+              <span>accessibility</span>
+              <span>multi-select</span>
+              <span>drag-and-drop</span>
+            </div> -->
+          </p>
+
+          <figure>
+            <img
+              src="images/tree.png"
+              alt="GCM tree component"
+              class="photo"
+              width="1438"
+              height="514"
+              loading="eager"
+            />
+            <figcaption>The main GCM tree expanded to several requirements management (RM) streams.</figcaption>
+          </figure>
         </section>
 
         <!-- TREE COMPARE -->
         <section id="tree-compare">
           <h3>Tree Compare</h3>
-          <img
-            src="images/tree-compare.png"
-            alt="tree comparison editor"
-            class="photo"
-            width="850"
-            height="728"
-            loading="eager"
-          />
+
+          <p>
+            The above tree component is configurable and used in different places. It's used in this compare view with
+            fewer actions enabled, but unique styling, and position and state syncing between the two.
+          </p>
+
+          <figure>
+            <img
+              src="images/tree-compare.png"
+              alt="tree compare view"
+              class="photo"
+              width="850"
+              height="728"
+              loading="eager"
+            />
+            <figcaption>Tree compare view highlighting a newly added item.</figcaption>
+          </figure>
         </section>
 
         <!-- GCM QUERY EDITOR -->
         <section id="query-editor">
           <h3>Query Builder</h3>
-          <img
-            src="images/gc-query-editor.png"
-            class="photo"
-            width="2050"
-            height="1124"
-            alt="query editor"
-            loading="lazy"
-          />
+
+          <p></p>
+
+          <figure>
+            <img
+              src="images/gc-query-editor.png"
+              class="photo"
+              width="2050"
+              height="1124"
+              alt="query editor"
+              loading="lazy"
+            />
+          </figure>
         </section>
 
         <!-- HISTORY VIEW -->
@@ -155,28 +194,46 @@
           <h2>Pix Grid for Playdate</h2>
 
           <p>
-            A pixel art app for <a href="https://play.date">Playdate</a>. Written in Lua. See
-            <a href="https://github.com/gillibrand/playdate-pixel-grid">playdate-pixel-grid</a> on GitHub.
+            A pixel art app for <a href="https://play.date">Playdate</a>. Written in Lua. Available on
+            <a href="https://github.com/gillibrand/playdate-pixel-grid">GitHub</a>.
           </p>
 
-          <img
-            class="photo"
-            src="images/pixgrid.jpg"
-            alt="pixgrid playdate app"
-            srcset="images/pixgrid@2x.jpg 2x, images/pixgrid.jpg @1x"
-          />
+          <figure>
+            <img
+              class="photo"
+              src="images/pixgrid.jpg"
+              alt="pixgrid playdate app"
+              srcset="images/pixgrid@2x.jpg 2x,
+            images/pixgrid.jpg @1x"
+            />
+            <figcaption>A stern bunny drawn in Pix Grid.</figcaption>
+          </figure>
         </section>
 
         <section id="url-clown">
           <h2>URL Clown for Chrome</h2>
           <p>
-            A Chrome extension for viewing and editing URLs. I needed this frequently for a job, and existing extensions
-            didn't handle hash parameters like I needed. So I made my own. See
-            <a href="https://github.com/gillibrand/url-clown">url-clown</a> on GitHub.
+            A Chrome extension for editing URLs. I needed this for work and existing extensions didn't handle hash
+            parameter key-value pairs. Available on
+            <a href="https://chromewebstore.google.com/detail/url-clown/alcebgboodppnkoioknieomnkoknjhnf"
+              >Chrome Web Store</a
+            >
+            and
+            <a href="https://github.com/gillibrand/url-clown">Github</a>.
           </p>
+
+          <figure>
+            <img
+              class="photo"
+              alt="URL Clown extension popup"
+              src="images/url-clown.jpg"
+              srcset="images/url-clown@2x.jpg 2x, images/url-clown.jpg @1x"
+            />
+            <figcaption>URL Clown handling encoded hash parameters.</figcaption>
+          </figure>
         </section>
 
-        <section id="this-page">
+        <!-- <section id="this-page">
           <h2>This Page</h2>
           <p>Of course this is a hand-crafted page featuring:</p>
           <ul>
@@ -185,7 +242,8 @@
             <li><code>IntersectionObserver</code> to sync the table of contents position</li>
             <li>Responsive design</li>
           </ul>
-        </section>
+        </section> -->
+
         <!-- <div class="player">
           <video class="player__video" preload="auto">
             <source src="images/jrs-tags.mp4" type="video/mp4" />
