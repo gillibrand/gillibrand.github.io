@@ -53,6 +53,8 @@ async function openLightbox(photo: HTMLImageElement) {
     closeLightbox();
   });
 
+  addOnSwipe(lightbox, closeLightbox);
+
   lightbox.addEventListener("cancel", (e) => {
     e.preventDefault();
     closeLightbox();
@@ -113,4 +115,37 @@ async function openLightbox(photo: HTMLImageElement) {
     lightbox.parentElement?.removeChild(lightbox);
     showScrollbar();
   }
+}
+
+/**
+ * Adds a touch listener to check if an element has been vertically swiped on. Used to close
+ * lightbox on swipe.
+ *
+ * @param element Element to watch for swipes on.
+ * @param callback Callback when swipe ends if past internal threshold.
+ */
+function addOnSwipe(element, callback) {
+  const swipeThreshold = 50;
+
+  let startY = 0;
+  let endY = 0;
+
+  element.addEventListener("touchstart", (e) => {
+    startY = e.touches[0].clientY;
+  });
+
+  element.addEventListener("touchmove", (e) => {
+    endY = e.touches[0].clientY;
+  });
+
+  element.addEventListener("touchend", () => {
+    const diff = endY - startY;
+
+    if (Math.abs(diff) > swipeThreshold) {
+      callback();
+    }
+
+    startY = 0;
+    endY = 0;
+  });
 }
