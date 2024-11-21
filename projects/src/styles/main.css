@@ -6,7 +6,6 @@
 
 :root {
   --scroll-spacer: 0px;
-  --small-bp: 768px;
 
   --border-color: rgba(0, 0, 0, 0.2);
   --yellow: #ffc53e;
@@ -257,22 +256,6 @@ figcaption {
 
 *:focus-visible {
   outline: solid 2px black;
-}
-
-body {
-  /* color: #333; */
-}
-
-strong {
-  /* border-bottom: solid 1px gray; */
-  /* text-decoration: underline; */
-  /* border-radius: 40%; */
-  /* background-color: rgba(248, 165, 11, 0.6); */
-  /* background-image: linear-gradient(90deg, orange); */
-  /* margin-inline: 0.125rem; */
-  /* letter-spacing: 50%; */
-  /* color: black; */
-  /* color: orange; */
 }
 
 .tag-cloud {

@@ -60,7 +60,10 @@ async function openLightbox(photo: HTMLImageElement) {
 
   document.body.appendChild(lightbox);
   lightbox.showModal();
-  lightbox.classList.add("is-open");
+
+  // this delay is for Safari, which still has the dialog as display:none for one tick so will not
+  // animate if added before then
+  setTimeout(() => lightbox.classList.add("is-open"));
 
   photo.style.visibility = "hidden";
 

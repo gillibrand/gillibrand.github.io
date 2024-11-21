@@ -19,6 +19,8 @@
       </div>
     </header>
 
+    <div class="navunderlay" aria-hidden="true" id="navunderlay"></div>
+
     <div class="cols" id="cols">
       <aside class="sidebar" id="sidebar">
         <nav>
@@ -202,8 +204,7 @@
               class="photo"
               src="images/pixgrid.jpg"
               alt="pixgrid playdate app"
-              srcset="images/pixgrid@2x.jpg 2x,
-            images/pixgrid.jpg @1x"
+              srcset="images/pixgrid@2x.jpg 2x, images/pixgrid.jpg 1x"
             />
             <figcaption>A stern bunny drawn in Pix Grid.</figcaption>
           </figure>
@@ -226,7 +227,7 @@
               class="photo"
               alt="URL Clown extension popup"
               src="images/url-clown.jpg"
-              srcset="images/url-clown@2x.jpg 2x, images/url-clown.jpg @1x"
+              srcset="images/url-clown@2x.jpg 2x, images/url-clown.jpg 1x"
             />
             <figcaption>URL Clown handling encoded hash parameters.</figcaption>
           </figure>
@@ -253,13 +254,8 @@
           <button class="vidplayer__button">Play</button>
         </div> -->
       </main>
-
-      <footer>hi there from Jay</footer>
     </div>
 
-    <script src="src/lightbox.ts" type="module"></script>
-    <script src="src/vidplayer.ts" type="module"></script>
-    <script src="src/navmenu.ts" type="module"></script>
-    <script src="src/hamburger.ts" type="module"></script>
+    <script src="src/index.ts" type="module"></script>
   </body>
 </html>

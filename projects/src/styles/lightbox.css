@@ -26,6 +26,9 @@ dialog.lightbox {
     max-height: calc(100% - 5rem);
     max-width: min(1400px, 100%);
     transform-origin: top left;
+
+    /* to get above text during animation */
+    z-index: 1;
   }
 
   &[open] {
@@ -51,4 +54,5 @@ dialog.lightbox {
 .lightbox__text {
   opacity: 1;
   transition: opacity ease 400ms;
+  padding-inline: 1rem;
 }

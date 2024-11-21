@@ -1,3 +1,5 @@
+import { closeMenu } from "./hamburger";
+
 const navmenu = document.getElementById("navmenu") as HTMLUListElement;
 
 function markSelected(a?: HTMLAnchorElement | HTMLHeadingElement) {
@@ -53,7 +55,7 @@ function initNavmenu() {
       block,
     });
 
-    setTimeout(() => document.body.classList.remove("nav-open"), 500);
+    closeMenu();
   });
 }
 
