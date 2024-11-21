@@ -11,9 +11,9 @@
     <header>
       <div class="inner-header">
         <button class="hamburger" id="hamburger">
-          <div class="hamburger__line"></div>
-          <div class="hamburger__line"></div>
-          <div class="hamburger__line"></div>
+          <div class="hamburger__bar"></div>
+          <div class="hamburger__bar"></div>
+          <div class="hamburger__bar"></div>
         </button>
         <h1>Jay / Projects</h1>
       </div>
@@ -22,7 +22,7 @@
     <div class="cols" id="cols">
       <aside class="sidebar" id="sidebar">
         <nav>
-          <ul class="toc" id="toc">
+          <ul class="navmenu" id="navmenu">
             <!-- JavaScript inserted -->
           </ul>
         </nav>
@@ -166,22 +166,21 @@
 
           <img src="images/rm-filters.png" class="photo" width="987" height="583" alt="filters editor" loading="lazy" />
 
-          <div class="player float-right ms-4">
+          <div class="vidplayer float-right ms-4">
             <video
-              class="player__video"
+              class="vidplayer__video"
               preload="none"
               width="300"
               height="190"
               poster="images/confirm-delete-button.png"
-              playsinline
             >
               <source src="images/confirm-delete-button.mp4" type="video/mp4" />
               Video no supported
             </video>
 
-            <img src="images/play-overlay.svg" class="player__overlay" />
+            <img src="images/play-overlay.svg" class="vidplayer__overlay" />
 
-            <button class="player__button">Play</button>
+            <button class="vidplayer__button">Play</button>
           </div>
 
           <p>
@@ -244,21 +243,23 @@
           </ul>
         </section> -->
 
-        <!-- <div class="player">
-          <video class="player__video" preload="auto">
+        <!-- <div class="vidplayer">
+          <video class="vidplayer__video" preload="auto">
             <source src="images/jrs-tags.mp4" type="video/mp4" />
             Video no supported
           </video>
   
-          <img src="images/play-overlay.svg" class="player__overlay" />
-          <button class="player__button">Play</button>
+          <img src="images/play-overlay.svg" class="vidplayer__overlay" />
+          <button class="vidplayer__button">Play</button>
         </div> -->
       </main>
+
+      <footer>hi there from Jay</footer>
     </div>
 
     <script src="src/lightbox.ts" type="module"></script>
-    <script src="src/player.ts" type="module"></script>
-    <script src="src/toc.ts" type="module"></script>
+    <script src="src/vidplayer.ts" type="module"></script>
+    <script src="src/navmenu.ts" type="module"></script>
     <script src="src/hamburger.ts" type="module"></script>
   </body>
 </html>

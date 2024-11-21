@@ -23,9 +23,12 @@ html.modal-open {
   }
 }
 
+/* Only show in wide/desktop size. We actually make it invisible instead of none so that
+intersection observers still see it. */
 .desktop {
   @media (width <= 768px) {
-    display: none;
+    position: absolute;
+    visibility: hidden;
   }
 }
 
@@ -84,6 +87,13 @@ h2 {
 
 section {
   display: flow-root;
+
+  /* compensate for possible fixed header in mobile view */
+  scroll-margin-top: 3rem;
+
+  @media (width > 768px) {
+    scroll-margin-top: 0;
+  }
 }
 
 section:last-child {
@@ -137,7 +147,7 @@ figcaption {
 }
 
 .photo,
-.player__video {
+.vidplayer__video {
   border: solid 10px white;
   box-shadow: 3px 3px 10px var(--border-color);
   user-select: none;
@@ -146,7 +156,7 @@ figcaption {
 }
 
 .photo,
-.player {
+.vidplayer {
   margin-bottom: 2rem;
 }
 
@@ -156,7 +166,7 @@ figcaption {
   margin-bottom: 2rem;
 }
 
-.player {
+.vidplayer {
   display: grid;
   grid-template-columns: 1fr;
 
@@ -165,23 +175,23 @@ figcaption {
   gap: 0.5rem;
 }
 
-.player__video,
-.player__overlay {
+.vidplayer__video,
+.vidplayer__overlay {
   grid-row: 1 / 1;
   grid-column: 1 / 1;
 }
 
-.player__overlay {
+.vidplayer__overlay {
   pointer-events: none;
   z-index: 1;
 }
 
-.player__video {
+.vidplayer__video {
   cursor: pointer;
   background-color: white;
 }
 
-.player__button {
+.vidplayer__button {
   appearance: none;
   background-color: transparent;
   border: none;

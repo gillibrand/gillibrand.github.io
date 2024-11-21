@@ -1,9 +1,9 @@
-const players = document.querySelectorAll(".player");
+const players = document.querySelectorAll(".vidplayer");
 
 players.forEach((player) => {
-  const video = player.querySelector(".player__video") as HTMLVideoElement;
-  const button = player.querySelector(".player__button") as HTMLButtonElement;
-  const overlay = player.querySelector<HTMLElement>(".player__overlay");
+  const video = player.querySelector(".vidplayer__video") as HTMLVideoElement;
+  const button = player.querySelector(".vidplayer__button") as HTMLButtonElement;
+  const overlay = player.querySelector<HTMLElement>(".vidplayer__overlay");
 
   function played() {
     if (overlay) overlay.style.display = "none";

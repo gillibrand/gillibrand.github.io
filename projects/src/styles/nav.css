@@ -1,5 +1,4 @@
 header {
-  /* background-color: white; */
   background-color: var(--yellow);
   position: fixed;
   padding: 0;
@@ -10,7 +9,6 @@ header {
   }
   min-height: 3.5rem;
   z-index: 2;
-  /* box-shadow: 0 0 8px rgba(0, 0, 0, 0.7); */
   padding-inline: 1rem;
 
   .inner-header {
@@ -33,21 +31,18 @@ header {
 
 .sidebar {
   nav {
-    /* font-family: monospace; */
     position: fixed;
     top: 2rem;
   }
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
+    position: fixed;
     top: 3.5rem;
     left: 0rem;
     padding: 2rem;
     bottom: 0;
-    position: fixed;
     background-color: var(--yellow);
     z-index: 1;
-    /* transform: translateX(-100%); */
-    /* transition: transform 200ms ease; */
 
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
     display: none;
@@ -81,7 +76,7 @@ header {
   }
 }
 
-.hamburger__line {
+.hamburger__bar {
   height: 0.25rem;
   width: 100%;
   background-color: black;
@@ -103,7 +98,7 @@ header {
   }
 }
 
-.toc {
+.navmenu {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -123,7 +118,7 @@ header {
   }
 }
 
-.toc__entry {
+.navmenu__entry {
   text-decoration: none;
   color: black;
   display: block;
@@ -181,16 +176,6 @@ header {
   }
 }
 
-.toc__entry--group {
+.navmenu__entry--group {
   padding-left: 2rem;
-}
-
-.menu-dialog {
-  position: fixed;
-  border: none;
-  /* inset: 3.5rem 0 0 0; */
-  top: 3.5rem;
-  /* height: auto; */
-  /* width: auto; */
-  max-width: auto;
 }

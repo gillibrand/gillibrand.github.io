@@ -1,4 +1,4 @@
-const toc = document.getElementById("toc") as HTMLUListElement;
+const navmenu = document.getElementById("navmenu") as HTMLUListElement;
 
 function markSelected(a?: HTMLAnchorElement | HTMLHeadingElement) {
   if (!a) return;
@@ -9,11 +9,11 @@ function markSelected(a?: HTMLAnchorElement | HTMLHeadingElement) {
     a = document.querySelector(`[data-to="${sectionId}"]`) as HTMLAnchorElement;
   }
 
-  toc.querySelectorAll(".is-selected").forEach((el) => el.classList.remove("is-selected"));
+  navmenu.querySelectorAll(".is-selected").forEach((el) => el.classList.remove("is-selected"));
   a.classList.add("is-selected");
 }
 
-function initToc() {
+function initNavmenu() {
   const linkFrags: string[] = [];
   document.querySelectorAll("main section[id]").forEach((section) => {
     const sectionId = section.id;
@@ -22,9 +22,9 @@ function initToc() {
 
     const sectionTitle = heading.dataset.alt || heading.textContent;
 
-    const classNames = ["toc__entry"];
+    const classNames = ["navmenu__entry"];
     if (heading.nodeName === "H2" || heading.nodeName === "H1") {
-      classNames.push("toc__entry--group");
+      classNames.push("navmenu__entry--group");
     }
 
     linkFrags.push(
@@ -34,9 +34,9 @@ function initToc() {
     );
   });
 
-  toc.innerHTML = linkFrags.join("");
+  navmenu.innerHTML = linkFrags.join("");
 
-  toc.addEventListener("click", (e: MouseEvent) => {
+  navmenu.addEventListener("click", (e: MouseEvent) => {
     const a = e.target as HTMLAnchorElement;
     if (a.nodeName !== "A") return;
     e.preventDefault();
@@ -58,7 +58,7 @@ function initToc() {
 }
 
 function initIntersectionObserver() {
-  // Callback function for the observer
+  // Callback function for the observer. Checks if intersecting a header
   function handleIntersection(entries: IntersectionObserverEntry[], observer: IntersectionObserver) {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -96,5 +96,5 @@ function initIntersectionObserver() {
   });
 }
 
-initToc();
+initNavmenu();
 initIntersectionObserver();
