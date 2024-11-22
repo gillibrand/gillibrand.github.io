@@ -19,28 +19,31 @@ jobs:
         with:
           node-version: 22.11.0 # Adjust as per your Node.js version
 
-      - name: Install `projects`
+      - name: NPM install `projects`
         run: |
           cd projects
           npm ci
 
-      - name: Build `projects`
+      - name: Build `projects` to `dist`
         run: |
           cd projects
           npm run build
 
-      - name: Deploy root files
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
-          destination_dir: ./
-          exclude_assets: ".github,projects,about"
+      - name: Copy static root
+        run: copy index.html dist
 
-      - name: Deploy to `/projects`
-        uses: peaceiris/actions-gh-pages@v4
-        if: github.ref == 'refs/heads/main'
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./projects/dist
-          destination_dir: projects
+      # - name: Deploy root files
+      #   uses: peaceiris/actions-gh-pages@v4
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./
+      #     destination_dir: ./
+      #     exclude_assets: ".github,projects,about"
+
+      # - name: Deploy to `/projects`
+      #   uses: peaceiris/actions-gh-pages@v4
+      #   if: github.ref == 'refs/heads/main'
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./projects/dist
+      #     destination_dir: projects
