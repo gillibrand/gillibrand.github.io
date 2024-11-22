@@ -3,15 +3,16 @@
 header {
   background-color: var(--yellow);
   position: fixed;
-  padding: 0;
   top: 0;
   inset-inline: 0;
+
   html.modal-open & {
     inset-inline-end: var(--scrollbar-width);
   }
+
   min-height: 3.5rem;
   z-index: var(--z-header);
-  padding-inline: 1rem;
+  padding: 0 1rem;
 
   .inner-header {
     display: flex;
@@ -19,9 +20,13 @@ header {
     gap: 1rem;
     justify-content: space-between;
     border-bottom: solid 4px var(--border-color);
+  }
 
-    .nav-open & {
-      /* border-bottom-color: transparent; */
+  .nav-open & {
+    padding-inline-end: 0;
+
+    .inner-header {
+      padding-inline-end: 1rem;
     }
   }
 

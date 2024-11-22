@@ -32,6 +32,7 @@ function openMenu() {
   if (isOpen()) return;
 
   document.body.classList.add("nav-open");
+  hamburger.setAttribute("aria-expanded", String(true));
 
   sidebar.animate(
     {
@@ -70,6 +71,7 @@ async function closeMenu() {
 
   await anim.finished;
   document.body.classList.remove("nav-open");
+  hamburger.setAttribute("aria-expanded", String(false));
 }
 
 // Toggle open and closed
