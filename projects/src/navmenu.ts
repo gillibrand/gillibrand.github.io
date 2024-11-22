@@ -13,6 +13,11 @@ function markSelected(a?: HTMLAnchorElement | HTMLHeadingElement) {
 
   navmenu.querySelectorAll(".is-selected").forEach((el) => el.classList.remove("is-selected"));
   a.classList.add("is-selected");
+
+  const m = a["scrollIntoViewIfNeeded"];
+  if (typeof m === "function") {
+    m.call(a);
+  }
 }
 
 function initNavmenu() {
