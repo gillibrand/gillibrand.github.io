@@ -1,5 +1,19 @@
 const players = document.querySelectorAll(".vidplayer");
 
+function newImg(src) {
+  const img = document.createElement("img");
+  img.src = src;
+  return img;
+}
+
+function setButton(button, text, img) {
+  button.innerHTML = "";
+  const span = document.createElement("span");
+  span.textContent = text;
+  span.appendChild(img);
+  button.appendChild(span);
+}
+
 players.forEach((player) => {
   const video = player.querySelector(".vidplayer__video") as HTMLVideoElement;
   const button = player.querySelector(".vidplayer__button") as HTMLButtonElement;
@@ -7,16 +21,16 @@ players.forEach((player) => {
 
   function played() {
     if (overlay) overlay.style.display = "none";
-    button.textContent = "Pause ⏸";
+    setButton(button, "Pause ", newImg("images/pause.svg"));
   }
 
   function paused() {
-    button.textContent = "Play ⏵";
+    setButton(button, "Play ", newImg("images/play.svg"));
   }
 
   function ended() {
     if (overlay) overlay.style.display = "";
-    button.textContent = "Replay ⏮";
+    setButton(button, "Play ", newImg("images/play.svg"));
   }
 
   function togglePlay() {
