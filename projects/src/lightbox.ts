@@ -132,7 +132,7 @@ async function openLightbox(photo: HTMLImageElement) {
  * @param element Element to watch for swipes on.
  * @param callback Callback when swipe ends if past internal threshold.
  */
-function addOnSwipe(element, callback) {
+function addOnSwipe(element: HTMLElement, callback: () => void) {
   const swipeThreshold = 50;
 
   let startY = 0;
