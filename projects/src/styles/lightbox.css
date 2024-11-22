@@ -45,7 +45,7 @@ dialog.lightbox {
     transition: opacity 400ms ease;
     opacity: 0;
 
-    @media (prefers-reduced-motion: reduce) {
+    @media (prefers-reduced-motion) {
       transition: none;
     }
   }
@@ -55,8 +55,18 @@ dialog.lightbox {
   }
 }
 
+@media (prefers-reduced-motion) {
+  dialog.lightbox::backdrop {
+    transition: none;
+  }
+}
+
 .lightbox__text {
   opacity: 1;
   transition: opacity ease 400ms;
   padding-inline: 1rem;
+
+  @media (prefers-reduced-motion) {
+    transition: none;
+  }
 }
