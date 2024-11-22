@@ -1,4 +1,5 @@
 import { closeMenu } from "./hamburger";
+import { isReduceMotion } from "./isReduceMotion";
 
 const navmenu = document.getElementById("navmenu") as HTMLUListElement;
 
@@ -56,7 +57,7 @@ function initNavmenu() {
 
     const section = document.getElementById(a.dataset.to!);
     section?.scrollIntoView({
-      behavior: "smooth",
+      behavior: isReduceMotion() ? "auto" : "smooth",
       block,
     });
 

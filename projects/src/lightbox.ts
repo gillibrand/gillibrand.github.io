@@ -1,4 +1,5 @@
 import { hideScrollbar, showScrollbar } from "./getScrollbarWidth";
+import { isReduceMotion } from "./isReduceMotion";
 
 const photos = document.querySelectorAll(".photo");
 
@@ -86,28 +87,35 @@ async function openLightbox(photo: HTMLImageElement) {
   const startTransform = `translateY(${diffY}px) translateX(${diffX}px) scale(${scaleW}, ${scaleH})`;
   const endTransform = `translate(0, 0) scale(1) `;
 
-  const scaleAnim = newPhoto.animate(
-    {
-      transform: [startTransform, endTransform],
-    },
-    animOptions
-  );
+  let scaleAnim: Animation | undefined;
+
+  if (!isReduceMotion()) {
+    scaleAnim = newPhoto.animate(
+      {
+        transform: [startTransform, endTransform],
+      },
+      animOptions
+    );
+  }
 
   text.classList.remove("opacity-0");
 
   async function closeLightbox() {
-    scaleAnim.cancel();
+    scaleAnim?.cancel();
     text.classList.add("opacity-0");
 
     newPhoto.style.borderWidth = `${10 / scaleH}px`;
 
     lightbox.classList.remove("is-open");
-    await newPhoto.animate(
-      {
-        transform: [endTransform, startTransform],
-      },
-      animOptions
-    ).finished;
+
+    if (!isReduceMotion()) {
+      await newPhoto.animate(
+        {
+          transform: [endTransform, startTransform],
+        },
+        animOptions
+      ).finished;
+    }
 
     photo.style.visibility = "";
 

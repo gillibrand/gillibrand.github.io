@@ -1,3 +1,5 @@
+import { isReduceMotion } from "./isReduceMotion";
+
 const hamburger = document.getElementById("hamburger")!;
 const sidebar = document.getElementById("sidebar")!;
 const navunderlay = document.getElementById("navunderlay")!;
@@ -34,6 +36,8 @@ function openMenu() {
   document.body.classList.add("nav-open");
   hamburger.setAttribute("aria-expanded", String(true));
 
+  if (isReduceMotion()) return;
+
   sidebar.animate(
     {
       transform: ["translateX(-100%)", "translateX(0)"],
@@ -55,21 +59,24 @@ function openMenu() {
 async function closeMenu() {
   if (!isOpen()) return;
 
-  const anim = sidebar.animate(
-    {
-      transform: ["translateX(0)", "translateX(-100%)"],
-    },
-    animOptions
-  );
+  if (!isReduceMotion()) {
+    const anim = sidebar.animate(
+      {
+        transform: ["translateX(0)", "translateX(-100%)"],
+      },
+      animOptions
+    );
 
-  navunderlay.animate(
-    {
-      opacity: ["1", "0"],
-    },
-    animOptions
-  );
+    navunderlay.animate(
+      {
+        opacity: ["1", "0"],
+      },
+      animOptions
+    );
 
-  await anim.finished;
+    await anim.finished;
+  }
+
   document.body.classList.remove("nav-open");
   hamburger.setAttribute("aria-expanded", String(false));
 }
