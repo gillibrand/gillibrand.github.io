@@ -30,7 +30,7 @@ jobs:
           npm run build
 
       - name: Copy static root
-        run: copy index.html dist
+        run: cp index.html dist
 
       # - name: Deploy root files
       #   uses: peaceiris/actions-gh-pages@v4
