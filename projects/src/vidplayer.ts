@@ -1,3 +1,6 @@
+import playUrl from "/images/play.svg";
+import pauseUrl from "/images/pause.svg";
+
 const players = document.querySelectorAll(".vidplayer");
 
 function newImg(src) {
@@ -6,7 +9,7 @@ function newImg(src) {
   return img;
 }
 
-function setButton(button, text, img) {
+function setButton(button: HTMLElement, text: string, img: HTMLImageElement) {
   button.innerHTML = "";
   const span = document.createElement("span");
   span.textContent = text;
@@ -21,16 +24,16 @@ players.forEach((player) => {
 
   function played() {
     if (overlay) overlay.style.display = "none";
-    setButton(button, "Pause ", newImg("images/pause.svg"));
+    setButton(button, "Pause ", newImg(pauseUrl));
   }
 
   function paused() {
-    setButton(button, "Play ", newImg("images/play.svg"));
+    setButton(button, "Play ", newImg(playUrl));
   }
 
   function ended() {
     if (overlay) overlay.style.display = "";
-    setButton(button, "Play ", newImg("images/play.svg"));
+    setButton(button, "Play ", newImg(playUrl));
   }
 
   function togglePlay() {
