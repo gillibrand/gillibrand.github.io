@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/projects/assets/favicon-32x32-CocbdEvL.png" sizes="32x32" type="image/png" />
     <title>Jay / Projects</title>
-    <script type="module" crossorigin src="/projects/assets/index-JuRyNbDV.js"></script>
-    <link rel="stylesheet" crossorigin href="/projects/assets/index-6R8PuPIC.css">
+    <script type="module" crossorigin src="/projects/assets/index-9S71bgBK.js"></script>
+    <link rel="stylesheet" crossorigin href="/projects/assets/index-B3PghTcc.css">
   </head>
   <body>
     <header>
@@ -161,7 +161,11 @@
 
         <section id="dng">
           <h2>DOORS Next</h2>
-          <p>about...</p>
+          <p>
+            <a href="https://www.ibm.com/products/requirements-management"> IBM DOORS Next</a> is a market leading
+            requirements management tool that I worked for a short time. I contributed many bug fixes and serviceability
+            improvements, but I also had the opportunity to refresh its query builder (aka, filters).
+          </p>
         </section>
 
         <!-- RM QUERY EDITOR -->
@@ -169,16 +173,15 @@
           <h3>Carbon Query Builder</h3>
 
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis pariatur sapiente illo deleniti est!
-            Eligendi explicabo eius voluptate officiis fugiat.
+            The query builder was an existing feature. I revised it to align with the
+            <a href="https://carbondesignsystem.com/">IBM Carbon Design</a> guidelines, added support for nested AND/OR
+            groups, drag-and-drop reordering, and improved accessibility and usability.
           </p>
-
-          <!-- <img src="images/rm-filters.png" class="photo" width="987" height="583" alt="filters editor" loading="lazy" /> -->
 
           <figure>
             <div class="compare compare--checked" id="rm-filters">
-              <img src="/projects/assets/rm-filters-old-Dz8QddmC.png" alt="" />
-              <img src="/projects/assets/rm-filters-new-D0lqMnRC.png" alt="" />
+              <img src="/projects/assets/rm-filters-old-alt-BESQnzf-.png" alt="" />
+              <img src="/projects/assets/rm-filters-new-BThQDkB5.png" alt="" />
             </div>
 
             <div class="text-center mt-4 mb-4">
@@ -204,18 +207,19 @@
               height="190"
               poster="/projects/assets/confirm-delete-button-Ceot4SWF.png"
             >
-              <source src="/projects/assets/confirm-delete-button-BV6uJogD.mp4" type="video/mp4" />
-              Video no supported
+              <source src="/projects/assets/confirm-delete-button-DSrUitIH.mp4" type="video/mp4" />
+              Video not supported
             </video>
 
             <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='50'%20height='50'%20fill='none'%3e%3ccircle%20cx='25'%20cy='25'%20r='24.5'%20fill='%23000'%20stroke='%23fff'%20opacity='.6'/%3e%3cpath%20fill='%23fff'%20d='M40%2025%2017.5%2037.99V12.01z'%20opacity='.9'/%3e%3c/svg%3e" class="vidplayer__overlay" />
 
-            <button class="vidplayer__button">Play</button>
+            <button class="vidplayer__button button mt-2">Play</button>
           </div>
 
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et magnam, nihil excepturi distinctio assumenda
-            obcaecati nam hic officiis necessitatibus nisi minima deserunt, repudiandae, illo ad!
+            The old design let you remove conditions with a single click. For the new design I added inline "Remove"
+            confirmations directly on the buttons. This was my comprise that added a safety-net, but kept the speed of
+            editing customers expected.
           </p>
         </section>
 
