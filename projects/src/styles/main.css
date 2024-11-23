@@ -146,7 +146,8 @@ figcaption {
 }
 
 .photo,
-.vidplayer__video {
+.vidplayer__video,
+.compare {
   border: solid 10px white;
   box-shadow: 3px 3px 10px var(--border-color);
   user-select: none;

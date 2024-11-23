@@ -160,7 +160,7 @@
 
         <section id="dng">
           <h2>DOORS Next</h2>
-          <p>htis is suxz</p>
+          <p>about...</p>
         </section>
 
         <!-- RM QUERY EDITOR -->
@@ -172,7 +172,28 @@
             Eligendi explicabo eius voluptate officiis fugiat.
           </p>
 
-          <img src="images/rm-filters.png" class="photo" width="987" height="583" alt="filters editor" loading="lazy" />
+          <!-- <img src="images/rm-filters.png" class="photo" width="987" height="583" alt="filters editor" loading="lazy" /> -->
+
+          <figure>
+            <div class="compare compare--checked" id="rm-filters">
+              <img src="images/rm-filters-old.png" alt="" />
+              <img src="images/rm-filters-new.png" alt="" />
+            </div>
+
+            <div class="text-center mt-4 mb-4">
+              <label class="toggle" aria-label="show after image">
+                <span class="toggle__one" aria-hidden="true"> Before </span>
+                <span class="toggle__two" aria-hidden="true"> After </span>
+                <input
+                  class="toggle__checkbox"
+                  type="checkbox"
+                  checked
+                  id="rm-before-after"
+                  data-compare="rm-filters"
+                />
+              </label>
+            </div>
+          </figure>
 
           <div class="vidplayer float-right ms-4">
             <video
