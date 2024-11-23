@@ -48,20 +48,17 @@
   cursor: pointer;
 
   border-radius: 999px;
-  background-color: var(--yellow);
-  background-color: var(--yellow);
-  background-color: black;
-  /* background-coloSr: rgba(255, 255, 255, .4); */
-  /* padding: 0.25rem; */
   border: solid 4px black;
   border: solid 4px var(--border-color);
   background-color: #7d6739;
   border: solid 4px #7d6739;
 
+  font-size: 0.85rem;
+  font-size: 0.85rem;
+
   &:hover {
     background-color: #a5894d;
   }
-  font-size: 0.85rem;
 
   * {
     grid-row: 1 / 1;
@@ -86,8 +83,8 @@
   .toggle__one,
   .toggle__two {
     user-select: none;
+    color: #fffaee;
     color: white;
-    /* color: lightgray; */
 
     text-align: center;
     z-index: 1;
@@ -115,7 +112,7 @@
   .toggle__checkbox {
     appearance: none;
     background-color: var(--yellow);
-    background-color: #fede96;
+    background-color: var(--light-yellow);
     display: block;
     pointer-events: none;
     transition: transform ease 200ms;

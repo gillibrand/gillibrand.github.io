@@ -11,10 +11,9 @@ function newImg(src) {
 
 function setButton(button: HTMLElement, text: string, img: HTMLImageElement) {
   button.innerHTML = "";
-  const span = document.createElement("span");
-  span.textContent = text;
-  span.appendChild(img);
-  button.appendChild(span);
+  button.textContent = text;
+  button.appendChild(img);
+  // button.appendChild(span);
 }
 
 players.forEach((player) => {
