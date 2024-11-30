@@ -10,6 +10,9 @@
     grid-row: 1 / 1;
 
     transition: all ease 200ms;
+    @media (prefers-reduced-motion) {
+      transition: none;
+    }
 
     &:first-child {
       /* z-index: 1; */
@@ -48,12 +51,9 @@
   cursor: pointer;
 
   border-radius: 999px;
-  border: solid 4px black;
-  border: solid 4px var(--border-color);
   background-color: #7d6739;
   border: solid 4px #7d6739;
 
-  font-size: 0.85rem;
   font-size: 0.85rem;
 
   &:hover {
