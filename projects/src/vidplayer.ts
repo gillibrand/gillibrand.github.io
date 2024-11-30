@@ -3,7 +3,7 @@ import pauseUrl from "/images/pause.svg";
 
 const players = document.querySelectorAll(".vidplayer");
 
-function newImg(src) {
+function newImg(src: string) {
   const img = document.createElement("img");
   img.src = src;
   return img;
@@ -13,7 +13,6 @@ function setButton(button: HTMLElement, text: string, img: HTMLImageElement) {
   button.innerHTML = "";
   button.textContent = text;
   button.appendChild(img);
-  // button.appendChild(span);
 }
 
 players.forEach((player) => {
@@ -31,7 +30,7 @@ players.forEach((player) => {
   }
 
   function ended() {
-    if (overlay) overlay.style.display = "";
+    // if (overlay) overlay.style.display = "";
     setButton(button, "Play ", newImg(playUrl));
   }
 
