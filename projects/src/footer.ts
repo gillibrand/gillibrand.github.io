@@ -1,13 +1,12 @@
-const footerHead = document.querySelector(".footer-head")!;
-
+const footer = document.querySelector("footer")!;
 const observer = new IntersectionObserver(
   (entries) => {
     const entry = entries[0]!;
-    footerHead.classList.toggle("footer-head--up", entry.isIntersecting);
+    footer.classList.toggle("is-end", entry.isIntersecting);
   },
   {
-    threshold: 1.0,
+    threshold: 0.99,
   }
 );
 
-observer.observe(document.querySelector("footer")!);
+observer.observe(footer);

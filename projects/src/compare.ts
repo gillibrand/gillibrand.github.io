@@ -1,5 +1,4 @@
 const toggles = document.querySelectorAll<HTMLInputElement>(".toggle__checkbox");
-console.info(">>> try");
 
 toggles.forEach((toggle) => {
   const compareId = toggle.dataset["compare"];

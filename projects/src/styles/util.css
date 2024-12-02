@@ -69,3 +69,9 @@
 .justify-items-center {
   justify-items: center;
 }
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
