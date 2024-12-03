@@ -67,15 +67,28 @@
         </section>
 
         <section id="gcm">
-          <h2 data-alt="GCM">Global Configuration Management (GCM)</h2>
+          <h2 data-alt="Global CM">Global Configuration Management (GCM)</h2>
           <p>
             GCM manages versioned artifacts across apps in the
             <a href="https://www.ibm.com/products/engineering-lifecycle-management"
               >IBM Engineering Lifecycle Management</a
             >
-            (ELM) suite. I wrote and maintained most of its <strong>web UI</strong>, many
+            (ELM) suite. I wrote and maintained almost all of its <strong>web UI</strong>, many
             <strong>REST services</strong>, and some of the <strong>Java backend services</strong>.
           </p>
+
+          <figure>
+            <img
+              src="images/gcm.png"
+              srcset="images/gcm@2x.png 2x, images/gcm.png 1x"
+              alt="GCM UI with open configuration tree"
+              class="photo"
+              width="1154"
+              height="720"
+              loading="eager"
+            />
+            <figcaption>Editing a GCM tree containing streams from other apps.</figcaption>
+          </figure>
         </section>
 
         <!-- TREE -->
@@ -83,10 +96,9 @@
           <h3>Tree Component</h3>
 
           <p>
-            I wrote GCM's main tree component to support <strong>async lazy-loading</strong>,
-            <strong>fast re-renders</strong>, <strong>animated state changes</strong>,
-            <strong>keyboard navigation</strong>, <strong>accessibility</strong>, <strong>multi-select</strong>,
-            <strong>drag-and-drop</strong>, and more.
+            I wrote GCM's main tree component to support <strong>lazy-loading</strong>,
+            <strong>fast re-renders</strong>, <strong>animated changes</strong>, <strong>keyboard navigation</strong>,
+            <strong>multi-select</strong>, <strong>drag-and-drop</strong>, and more.
 
             <!-- <div class="tag-cloud">
               <span>lazy-loading</span>
@@ -118,7 +130,7 @@
 
           <p>
             The above tree component is configurable and used in different places. It's used in this compare view with
-            fewer actions enabled, but unique styling, and position and state syncing between the two.
+            fewer actions enabled, but unique styling, and state and scroll syncing between the two.
           </p>
 
           <figure>
@@ -138,7 +150,16 @@
         <section id="query-editor">
           <h3>Query Builder</h3>
 
-          <p></p>
+          <p>
+            The GCM query builder UI can search for streams based on attributes like dates, tags, numbers, custom enums,
+            and more. It can nest boolean conditions, and use other saved queries as subqueries. It's easy to refine
+            complicated queries by previewing results inline and using drag-and-drop to move conditions between groups.
+          </p>
+
+          <p>
+            Beside writing the UI, I wrote the Java services that handled its internal domain-specific language, and
+            that translated that into the actual database queries.
+          </p>
 
           <figure>
             <img
@@ -149,13 +170,26 @@
               alt="query editor"
               loading="lazy"
             />
+            <figcaption>A query with some nested OR conditions ("Some match").</figcaption>
           </figure>
         </section>
 
         <!-- HISTORY VIEW -->
         <section id="history-graph">
           <h3>History on Canvas</h3>
-          <img src="images/history.png" class="photo" width="2300" height="1028" alt="history view" loading="lazy" />
+
+          <p>
+            This history view shows the different branches and baselines of a stream. I used a
+            <code>&lt;canvas&gt;</code> element to to draw the arrows. Scalable to thousands of entries. The optional
+            mini-map in the bottom right can pan around large graphs.
+          </p>
+
+          <figure>
+            <img src="images/history.png" class="photo" width="2300" height="1028" alt="history view" loading="lazy" />
+            <figcaption>
+              Inspecting the state a baseline was created from and changes to the stream since then.
+            </figcaption>
+          </figure>
         </section>
 
         <section id="dng">
