@@ -26,7 +26,6 @@ need to turn off top-margin since it's not really after anything visual. */
 
 .float-right {
   float: right;
-  margin: 0;
 }
 
 .relative {
