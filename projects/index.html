@@ -47,7 +47,7 @@
             class="float-right ms-4 mb-4"
           />
 
-          <p>
+          <p class="mobile-first-child">
             Hi, I'm Jay Gillibrand, a software developer that transitioned from Java backends to frontend UI and UX. I
             love making web rich interfaces that work like you expect. Here are some professional and personal projects
             I worked on.
@@ -201,7 +201,7 @@
         </section>
 
         <!-- RM QUERY EDITOR -->
-        <section id="carbon-query-editor" class="clearfix">
+        <section id="carbon-query-editor">
           <h3>Carbon Query Builder</h3>
 
           <p>
@@ -224,8 +224,12 @@
               </label>
             </div>
           </figure>
+        </section>
 
-          <div class="vidplayer float-right ms-4">
+        <section id="inline-delete" class="clearfix">
+          <h3>Inline Delete</h3>
+
+          <div class="vidplayer float-right ms-4 mt-4">
             <video
               class="vidplayer__video"
               preload="none"
@@ -236,16 +240,14 @@
               <source src="images/confirm-delete-button.mp4" type="video/mp4" />
               Video not supported
             </video>
-
             <img src="images/play-overlay.svg" class="vidplayer__overlay" />
-
             <button class="vidplayer__button button mt-2">Play</button>
           </div>
 
           <p>
-            The old design let you remove conditions with a single click. For the new design I added inline "Remove"
-            confirmations directly on the buttons. This was my comprise that added a safety-net, but kept the speed of
-            editing customers expected.
+            The old query builder design let you remove conditions with a single click. For the new design I added
+            inline "Remove" confirmations directly on the buttons. My comprise that added a safety-net, but kept the
+            speed of editing customers expected.
           </p>
         </section>
 

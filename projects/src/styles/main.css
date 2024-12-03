@@ -17,19 +17,6 @@ html.modal-open {
   }
 }
 
-/* Only show in wide/desktop size. We actually make it invisible instead of none so that
-intersection observers still see it. */
-.desktop {
-  @media (width <= 768px) {
-    position: absolute;
-    visibility: hidden;
-  }
-}
-
-p {
-  margin-bottom: 1rem;
-}
-
 .button {
   padding: 0.25rem 1rem;
   border-radius: 999px;
@@ -63,36 +50,7 @@ body {
   }
 }
 
-h1 {
-  font-size: 2rem;
-}
-
-h1,
-h2,
-h3 {
-  font-family: "Arial Black", Verdana, sans-serif;
-}
-
-h1,
-h2 {
-  margin-bottom: 1rem;
-  padding-bottom: 0.25rem;
-  border-bottom: solid 0.25rem var(--border-color);
-
-  @media (width > 768px) {
-    margin-left: -1rem;
-    padding: 0 1rem 0.5rem 1rem;
-  }
-}
-
-h3 {
-  margin-bottom: 0.5rem;
-  padding: 0;
-}
-
 section {
-  margin-bottom: 2rem;
-
   /* compensate for possible fixed header in mobile view */
   scroll-margin-top: 3rem;
 
@@ -128,14 +86,6 @@ img {
   height: auto;
 }
 
-figure {
-  margin: 0 0 2rem 0;
-
-  .photo {
-    margin-bottom: 1rem;
-  }
-}
-
 .sr-only,
 figcaption {
   position: absolute;
@@ -155,18 +105,9 @@ figcaption {
   position: relative;
 }
 
-.photo,
-.vidplayer {
-  margin-bottom: 2rem;
-  &.float-right {
-    margin-bottom: 0.5rem;
-  }
-}
-
 .photo {
   display: block;
   cursor: zoom-in;
-  margin-bottom: 2rem;
 }
 
 .vidplayer {
@@ -204,7 +145,6 @@ figcaption {
 }
 
 .skill-grid {
-  margin-block-start: 2rem;
   font-size: 1rem;
   display: grid;
   grid-template-columns: min-content 1fr;
@@ -222,24 +162,6 @@ figcaption {
   @media (width > 768px) {
     gap: 0.25rem 3rem;
   }
-}
-
-.tags {
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.tag {
-  border: solid 1px gray;
-  border-radius: 100px;
-  font-size: 0.75rem;
-  padding: 0.25rem 0.5rem;
-}
-
-.tag--js {
-  background-color: dodgerblue;
-  color: white;
 }
 
 *:focus-visible {
@@ -272,7 +194,6 @@ figcaption {
 
   & > * {
     background-color: rgba(255, 255, 255, 0.3);
-    /* border: solid 1px rgba(255, 255, 255, 0.5); */
     border-radius: 0.5rem;
     padding: 0.125rem 0.75rem;
     text-align: center;

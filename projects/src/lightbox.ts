@@ -51,6 +51,7 @@ async function openLightbox(photo: HTMLImageElement) {
     const el = e.target as HTMLElement;
     if (el.nodeName === "P") return;
 
+    e.preventDefault();
     closeLightbox();
   });
 
@@ -140,16 +141,18 @@ function addOnSwipe(element: HTMLElement, callback: () => void) {
 
   element.addEventListener("touchstart", (e) => {
     startY = e.touches[0].clientY;
+    endY = startY;
   });
 
   element.addEventListener("touchmove", (e) => {
     endY = e.touches[0].clientY;
   });
 
-  element.addEventListener("touchend", () => {
+  element.addEventListener("touchend", (e) => {
     const diff = endY - startY;
 
     if (Math.abs(diff) > swipeThreshold) {
+      e.preventDefault();
       callback();
     }
 

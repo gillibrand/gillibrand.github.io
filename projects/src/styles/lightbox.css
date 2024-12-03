@@ -62,11 +62,6 @@ dialog.lightbox {
 }
 
 .lightbox__text {
-  opacity: 1;
   transition: opacity ease 400ms;
   padding-inline: 1rem;
-
-  @media (prefers-reduced-motion) {
-    transition: none;
-  }
 }
