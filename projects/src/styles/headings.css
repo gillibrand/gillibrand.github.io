@@ -1,15 +1,19 @@
-h1 {
-  font-size: 2rem;
-}
-
 h1,
 h2,
 h3 {
   font-family: "Arial Black", Verdana, sans-serif;
 }
 
+h1 {
+  font-size: 2rem;
+}
+
 h2 {
   margin-top: 2.5rem;
+}
+
+h3 {
+  margin-top: 2rem;
 }
 
 h1,
