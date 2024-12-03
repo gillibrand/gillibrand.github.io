@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/projects/assets/favicon-32x32-CocbdEvL.png" sizes="32x32" type="image/png" />
     <title>Jay / Projects</title>
-    <script type="module" crossorigin src="/projects/assets/index-9S71bgBK.js"></script>
-    <link rel="stylesheet" crossorigin href="/projects/assets/index-B3PghTcc.css">
+    <script type="module" crossorigin src="/projects/assets/index-DvXrG-Zn.js"></script>
+    <link rel="stylesheet" crossorigin href="/projects/assets/index-D3ssHz0T.css">
   </head>
   <body>
     <header>
@@ -31,7 +31,7 @@
     <div class="cols" id="cols">
       <aside class="sidebar" id="sidebar">
         <nav>
-          <ul class="navmenu" id="navmenu">
+          <ul class="navmenu" id="navmenu" role="list">
             <!-- JavaScript inserted -->
           </ul>
         </nav>
@@ -48,7 +48,7 @@
             class="float-right ms-4 mb-4"
           />
 
-          <p>
+          <p class="mobile-first-child">
             Hi, I'm Jay Gillibrand, a software developer that transitioned from Java backends to frontend UI and UX. I
             love making web rich interfaces that work like you expect. Here are some professional and personal projects
             I worked on.
@@ -68,15 +68,28 @@
         </section>
 
         <section id="gcm">
-          <h2 data-alt="GCM">Global Configuration Management (GCM)</h2>
+          <h2 data-alt="Global CM">Global Configuration Management (GCM)</h2>
           <p>
             GCM manages versioned artifacts across apps in the
             <a href="https://www.ibm.com/products/engineering-lifecycle-management"
               >IBM Engineering Lifecycle Management</a
             >
-            (ELM) suite. I wrote and maintained most of its <strong>web UI</strong>, many
+            (ELM) suite. I wrote and maintained almost all of its <strong>web UI</strong>, many
             <strong>REST services</strong>, and some of the <strong>Java backend services</strong>.
           </p>
+
+          <figure>
+            <img
+              src="/projects/assets/gcm-DlKDporM.png"
+              srcset="/projects/assets/gcm@2x-ZEaBE8tf.png 2x, /projects/assets/gcm-DlKDporM.png 1x"
+              alt="GCM UI with open configuration tree"
+              class="photo"
+              width="1154"
+              height="720"
+              loading="eager"
+            />
+            <figcaption>Editing a GCM tree containing streams from other apps.</figcaption>
+          </figure>
         </section>
 
         <!-- TREE -->
@@ -84,21 +97,19 @@
           <h3>Tree Component</h3>
 
           <p>
-            I wrote GCM's main tree component to support <strong>async lazy-loading</strong>,
-            <strong>fast re-renders</strong>, <strong>animated state changes</strong>,
-            <strong>keyboard navigation</strong>, <strong>accessibility</strong>, <strong>multi-select</strong>,
-            <strong>drag-and-drop</strong>, and more.
-
-            <!-- <div class="tag-cloud">
-              <span>lazy-loading</span>
-              <span>fast re-render</span>
-              <span>animations</span>
-              <span>keyboard navigation</span>
-              <span>accessibility</span>
-              <span>multi-select</span>
-              <span>drag-and-drop</span>
-            </div> -->
+            I wrote GCM's main tree component to support <strong>lazy-loading</strong>,
+            <strong>fast re-renders</strong>, <strong>animated changes</strong>, <strong>keyboard navigation</strong>,
+            <strong>multi-select</strong>, <strong>drag-and-drop</strong>, and more.
           </p>
+
+          <!-- <ul class="tag-cloud" role="list">
+            <li>lazy-loading</li>
+            <li>animations</li>
+            <li>keyboard nav</li>
+            <li>a11y</li>
+            <li>multi-select</li>
+            <li>drag-and-drop</li>
+          </ul> -->
 
           <figure>
             <img
@@ -119,7 +130,7 @@
 
           <p>
             The above tree component is configurable and used in different places. It's used in this compare view with
-            fewer actions enabled, but unique styling, and position and state syncing between the two.
+            fewer actions enabled, but unique styling, and state and scroll syncing between the two.
           </p>
 
           <figure>
@@ -139,7 +150,16 @@
         <section id="query-editor">
           <h3>Query Builder</h3>
 
-          <p></p>
+          <p>
+            The GCM query builder UI can search for streams based on attributes like dates, tags, numbers, custom enums,
+            and more. It can nest boolean conditions, and use other saved queries as subqueries. It's easy to refine
+            complicated queries by previewing results inline and using drag-and-drop to move conditions between groups.
+          </p>
+
+          <p>
+            Beside writing the UI, I wrote the Java services that handled its internal domain-specific language, and
+            that translated that into the actual database queries.
+          </p>
 
           <figure>
             <img
@@ -150,21 +170,34 @@
               alt="query editor"
               loading="lazy"
             />
+            <figcaption>A query with some nested OR conditions ("Some match").</figcaption>
           </figure>
         </section>
 
         <!-- HISTORY VIEW -->
         <section id="history-graph">
           <h3>History on Canvas</h3>
-          <img src="/projects/assets/history-BnF99gas.png" class="photo" width="2300" height="1028" alt="history view" loading="lazy" />
+
+          <p>
+            This history view shows the different branches and baselines of a stream. I used a
+            <code>&lt;canvas&gt;</code> element to to draw the arrows. Scalable to thousands of entries. The optional
+            mini-map in the bottom right can pan around large graphs.
+          </p>
+
+          <figure>
+            <img src="/projects/assets/history-BnF99gas.png" class="photo" width="2300" height="1028" alt="history view" loading="lazy" />
+            <figcaption>
+              Inspecting the state a baseline was created from and changes to the stream since then.
+            </figcaption>
+          </figure>
         </section>
 
         <section id="dng">
           <h2>DOORS Next</h2>
           <p>
             <a href="https://www.ibm.com/products/requirements-management"> IBM DOORS Next</a> is a market leading
-            requirements management tool that I worked for a short time. I contributed many bug fixes and serviceability
-            improvements, but I also had the opportunity to refresh its query builder (aka, filters).
+            requirements management tool that I worked on for a short time. I contributed many bug fixes and
+            serviceability improvements, but I also had the opportunity to refresh its query builder (aka, filters).
           </p>
         </section>
 
@@ -188,18 +221,16 @@
               <label class="toggle" aria-label="show after image">
                 <span class="toggle__one" aria-hidden="true"> Before </span>
                 <span class="toggle__two" aria-hidden="true"> After </span>
-                <input
-                  class="toggle__checkbox"
-                  type="checkbox"
-                  checked
-                  id="rm-before-after"
-                  data-compare="rm-filters"
-                />
+                <input class="toggle__checkbox" type="checkbox" checked data-compare="rm-filters" />
               </label>
             </div>
           </figure>
+        </section>
 
-          <div class="vidplayer float-right ms-4">
+        <section id="inline-delete" class="clearfix">
+          <h3>Inline Delete</h3>
+
+          <div class="vidplayer float-right ms-4 mt-4">
             <video
               class="vidplayer__video"
               preload="none"
@@ -210,16 +241,14 @@
               <source src="/projects/assets/confirm-delete-button-DSrUitIH.mp4" type="video/mp4" />
               Video not supported
             </video>
-
             <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='50'%20height='50'%20fill='none'%3e%3ccircle%20cx='25'%20cy='25'%20r='24.5'%20fill='%23000'%20stroke='%23fff'%20opacity='.6'/%3e%3cpath%20fill='%23fff'%20d='M40%2025%2017.5%2037.99V12.01z'%20opacity='.9'/%3e%3c/svg%3e" class="vidplayer__overlay" />
-
             <button class="vidplayer__button button mt-2">Play</button>
           </div>
 
           <p>
-            The old design let you remove conditions with a single click. For the new design I added inline "Remove"
-            confirmations directly on the buttons. This was my comprise that added a safety-net, but kept the speed of
-            editing customers expected.
+            The old query builder design let you remove conditions with a single click. For the new design I added
+            inline "Remove" confirmations directly on the buttons. My comprise that added a safety-net, but kept the
+            speed of editing customers expected.
           </p>
         </section>
 
@@ -264,29 +293,23 @@
             <figcaption>URL Clown handling encoded hash parameters.</figcaption>
           </figure>
         </section>
-
-        <!-- <section id="this-page">
-          <h2>This Page</h2>
-          <p>Of course this is a hand-crafted page featuring:</p>
-          <ul>
-            <li>Custom photo lightbox in a with no-jiggle scrollbar hiding</li>
-            <li>Custom mini video player</li>
-            <li><code>IntersectionObserver</code> to sync the table of contents position</li>
-            <li>Responsive design</li>
-          </ul>
-        </section> -->
-
-        <!-- <div class="vidplayer">
-          <video class="vidplayer__video" preload="auto">
-            <source src="images/jrs-tags.mp4" type="video/mp4" />
-            Video no supported
-          </video>
-  
-          <img src="images/play-overlay.svg" class="vidplayer__overlay" />
-          <button class="vidplayer__button">Play</button>
-        </div> -->
       </main>
     </div>
 
+    <footer>
+      <div class="footer-content" id="footer-content">
+        <div>
+          <div class="made-by">Designed and built by</div>
+          <div class="my-name">★&nbsp;&nbsp;&nbsp;Jay Gillibrand&nbsp;&nbsp;&nbsp;★</div>
+
+          <img
+            src="/projects/assets/jay-head-DdDRU4Az.png"
+            srcset="/projects/assets/jay-head-DdDRU4Az.png 1x, /projects/assets/jay-head@2x-CYFx0iRg.png 2x"
+            alt="headshot of Jay"
+            class="footer-head"
+          />
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
