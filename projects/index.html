@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/projects/assets/favicon-32x32-CocbdEvL.png" sizes="32x32" type="image/png" />
     <title>Jay / Projects</title>
-    <script type="module" crossorigin src="/projects/assets/index-CO75Bskx.js"></script>
-    <link rel="stylesheet" crossorigin href="/projects/assets/index-Bs5BsG5f.css">
+    <script type="module" crossorigin src="/projects/assets/index-B45fnT9_.js"></script>
+    <link rel="stylesheet" crossorigin href="/projects/assets/index-CLc10ihc.css">
   </head>
   <body>
     <header>
@@ -28,7 +28,7 @@
 
     <div class="navunderlay" aria-hidden="true" id="navunderlay"></div>
 
-    <div class="cols" id="cols">
+    <div class="sidebar-layout">
       <aside class="sidebar" id="sidebar">
         <nav>
           <ul class="navmenu" id="navmenu" role="list">
@@ -51,9 +51,9 @@
           />
 
           <p class="mobile-first-child">
-            Hi, I'm Jay Gillibrand, a software developer that transitioned from Java backends to frontend UI and UX. I
-            love making web rich interfaces that work like you expect. Here are some professional and personal projects
-            I worked on.
+            Hi, I'm Jay Gillibrand, a software developer that's worked on several enterprise apps—both backend and
+            frontend. I love making rich, highly-interactive interfaces. Here's a little about me and few professional
+            and personal projects I've worked on.
           </p>
 
           <dl class="skill-grid">
@@ -61,10 +61,19 @@
             <dd>Extensive experience with rich web apps in React, TypeScript, Dojo, vanilla JavaScript</dd>
 
             <dt>Java</dt>
-            <dd>REST APIs, multithreaded services</dd>
+            <dd>REST services, multithreading, client-server apps</dd>
             <dt>LinkedIn</dt>
             <dd>
               <a href="https://www.linkedin.com/in/jay-gillibrand/">https://www.linkedin.com/in/jay-gillibrand</a>
+            </dd>
+
+            <!-- <dt>Pet Peeves</dt>
+            <dd>Bad error messages; slow-loading animations</dd> -->
+
+            <dt>Education</dt>
+            <dd>
+              University of California, Irvine <br />
+              Bachelor of Science in Computer Science
             </dd>
           </dl>
         </section>
@@ -101,7 +110,8 @@
           <p>
             I wrote GCM's main tree component to support <strong>lazy-loading</strong>,
             <strong>fast re-renders</strong>, <strong>animated changes</strong>, <strong>keyboard navigation</strong>,
-            <strong>multi-select</strong>, <strong>drag-and-drop</strong>, and more.
+            <strong>multi-select</strong>, <strong>drag-and-drop</strong>, and more. This completely replaced a 3rd
+            party component that didn't offer the speed or features I needed.
           </p>
 
           <!-- <ul class="tag-cloud" role="list">
@@ -126,41 +136,19 @@
           </figure>
         </section>
 
-        <!-- TREE COMPARE -->
-        <!-- <section id="tree-compare">
-          <h3>Tree Compare</h3>
-
-          <p>
-            The above tree component is configurable and used in different places. It's used in this compare view with
-            fewer actions enabled, but unique styling, and state and scroll syncing between the two.
-          </p>
-
-          <figure>
-            <img
-              src="images/tree-compare.png"
-              alt="tree compare view"
-              class="photo"
-              width="850"
-              height="728"
-              loading="lazy"
-            />
-            <figcaption>Tree compare view highlighting a newly added item.</figcaption>
-          </figure>
-        </section> -->
-
         <!-- GCM QUERY EDITOR -->
         <section id="query-editor">
           <h3>Query Builder</h3>
 
           <p>
-            The GCM query builder UI can search for streams based on attributes like dates, tags, numbers, custom enums,
-            and more. It can nest boolean conditions, and use other saved queries as subqueries. It's easy to refine
-            complicated queries by previewing results inline and using drag-and-drop to move conditions between groups.
+            The GCM query builder UI can search based on attributes like dates, tags, numbers, custom enums, and more.
+            It can nest boolean conditions, and subqueries. It's easy to refine complicated queries by previewing
+            results inline and using drag-and-drop to move conditions between groups.
           </p>
 
           <p>
-            Beside writing the UI, I wrote the Java services that handled its internal domain-specific language, and
-            that translated that into the actual database queries.
+            I wrote this UI, plus the Java services to parse its internal domain-specific language and translate that
+            into the actual database queries.
           </p>
 
           <figure>
@@ -182,8 +170,9 @@
 
           <p>
             This history view shows the different branches and baselines of a stream. I used a
-            <code>&lt;canvas&gt;</code> element to to draw the arrows. Scalable to thousands of entries. The optional
-            mini-map in the bottom right can pan around large graphs.
+            <code>&lt;canvas&gt;</code> element to to draw the connections. The optional mini-map in the bottom right
+            can pan around large graphs. There are several ways to collapse, filter, and navigate to support thousands
+            of loaded nodes.
           </p>
 
           <figure>
@@ -259,7 +248,7 @@
                 height="190"
                 poster="/projects/assets/confirm-delete-button-BLlBPInY.png"
               >
-                <source src="/projects/assets/confirm-delete-button-DSrUitIH.mp4" type="video/mp4" />
+                <source src="/projects/assets/confirm-delete-button-CI7QBSUF.mp4" type="video/mp4" />
                 Video not supported
               </video>
               <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='50'%20height='50'%20fill='none'%3e%3ccircle%20cx='25'%20cy='25'%20r='24.5'%20fill='%23000'%20stroke='%23fff'%20opacity='.6'/%3e%3cpath%20fill='%23fff'%20d='M40%2025%2017.5%2037.99V12.01z'%20opacity='.9'/%3e%3c/svg%3e" class="vidplayer__overlay" />
@@ -268,6 +257,40 @@
           </div>
         </section>
 
+        <!-- JRS -->
+        <section id="jrs">
+          <h2>Report Builder</h2>
+
+          <p>
+            Report Builder creates and runs reports on artifacts that span the
+            <a href="https://www.ibm.com/products/engineering-lifecycle-management">IBM ELM</a> suite. I bootstrapped
+            the project to replace its jQuery UI with a modern TypeScript/React UI. That included initial project setup
+            with build scripts for dev and production; creating the core APIs to work with existing backend services,
+            including authentication; and building some of its core UI components.
+          </p>
+        </section>
+
+        <section id="tags">
+          <h3>Bulk Tag Editor</h3>
+
+          <p>
+            I built a React tag component for Report Builder that needed a variation for when multiple reports are
+            selected. I worked closely with a UX designer on this version that looks similar to the single-report
+            version, but uses menus, icons, and color to present the exact changes taking place. There are a lot of
+            possible states, but the most common use cases proved easy-to-use with users.
+          </p>
+
+          <div class="vidplayer">
+            <video class="vidplayer__video" preload="none" width="886" height="550" poster="/projects/assets/jrs-poster-By8NbNL_.png">
+              <source src="/projects/assets/jrs-tags-BuJwK2GG.mp4" type="video/mp4" />
+              Video not supported
+            </video>
+            <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='50'%20height='50'%20fill='none'%3e%3ccircle%20cx='25'%20cy='25'%20r='24.5'%20fill='%23000'%20stroke='%23fff'%20opacity='.6'/%3e%3cpath%20fill='%23fff'%20d='M40%2025%2017.5%2037.99V12.01z'%20opacity='.9'/%3e%3c/svg%3e" class="vidplayer__overlay" />
+            <button class="vidplayer__button button mt-2">Play</button>
+          </div>
+        </section>
+
+        <!-- PLAYDATE -->
         <section id="pixgrid">
           <h2>Pix Grid for Playdate</h2>
 
@@ -290,6 +313,7 @@
           </figure>
         </section>
 
+        <!-- URL CLOWN -->
         <section id="url-clown">
           <h2>URL Clown for Chrome</h2>
           <p>
