@@ -1,5 +1,6 @@
 import playUrl from "/images/play.svg";
 import pauseUrl from "/images/pause.svg";
+import replayUrl from "/images/replay.svg";
 
 const players = document.querySelectorAll(".vidplayer");
 
@@ -30,8 +31,7 @@ players.forEach((player) => {
   }
 
   function ended() {
-    // if (overlay) overlay.style.display = "";
-    setButton(button, "Play ", newImg(playUrl));
+    setButton(button, "Replay ", newImg(replayUrl));
   }
 
   function togglePlay() {

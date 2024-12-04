@@ -47,12 +47,21 @@ body {
   }
 }
 
+/* Generic vertical spacing in main section */
+section,
+main,
+dialog {
+  & > * + * {
+    margin-block-start: 1rem;
+  }
+}
+
 section {
   /* compensate for possible fixed header in mobile view */
   scroll-margin-top: 4rem;
 
   @media (width > 768px) {
-    scroll-margin-top: 0;
+    scroll-margin-top: 1rem;
   }
 }
 
@@ -104,7 +113,6 @@ figcaption {
 .vidplayer {
   display: grid;
   grid-template-columns: 1fr;
-  max-width: 50%;
 
   justify-items: center;
   align-items: center;
@@ -128,7 +136,7 @@ figcaption {
 }
 
 .vidplayer__button {
-  min-width: 6rem;
+  min-width: 7rem;
   justify-content: center;
   display: inline-flex;
   gap: 0.25rem;
@@ -236,4 +244,18 @@ footer {
 
 code {
   font-family: Consolas, monospace;
+}
+
+.content-with-image {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: start;
+
+  & > :first-child {
+    min-width: 40%;
+    flex-basis: 0;
+    flex-grow: 1;
+  }
 }

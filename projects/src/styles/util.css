@@ -1,12 +1,3 @@
-/* Generic vertical spacing in main section */
-section,
-main,
-dialog {
-  & > * + * {
-    margin-block-start: 1rem;
-  }
-}
-
 /* Only show in wide/desktop size. We actually make it invisible instead of none so that
 intersection observers still see it. */
 .desktop {

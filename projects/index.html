@@ -243,26 +243,28 @@
         <section id="inline-delete" class="clearfix">
           <h3>Inline Delete</h3>
 
-          <div class="vidplayer float-right ms-4 mt-4">
-            <video
-              class="vidplayer__video"
-              preload="none"
-              width="300"
-              height="190"
-              poster="images/confirm-delete-button.png"
-            >
-              <source src="images/confirm-delete-button.mp4" type="video/mp4" />
-              Video not supported
-            </video>
-            <img src="images/play-overlay.svg" class="vidplayer__overlay" />
-            <button class="vidplayer__button button mt-2">Play</button>
-          </div>
+          <div class="content-with-image">
+            <p>
+              The old query builder design let you remove conditions with a single click. For the new design I added
+              inline "Remove" confirmations directly on the buttons. My comprise that added a safety-net, but kept the
+              speed of editing customers expected.
+            </p>
 
-          <p>
-            The old query builder design let you remove conditions with a single click. For the new design I added
-            inline "Remove" confirmations directly on the buttons. My comprise that added a safety-net, but kept the
-            speed of editing customers expected.
-          </p>
+            <div class="vidplayer">
+              <video
+                class="vidplayer__video"
+                preload="none"
+                width="300"
+                height="190"
+                poster="images/confirm-delete-button.png"
+              >
+                <source src="images/confirm-delete-button.mp4" type="video/mp4" />
+                Video not supported
+              </video>
+              <img src="images/play-overlay.svg" class="vidplayer__overlay" />
+              <button class="vidplayer__button button mt-2">Play</button>
+            </div>
+          </div>
         </section>
 
         <section id="pixgrid">
