@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/projects/assets/favicon-32x32-CocbdEvL.png" sizes="32x32" type="image/png" />
     <title>Jay / Projects</title>
-    <script type="module" crossorigin src="/projects/assets/index-B45fnT9_.js"></script>
-    <link rel="stylesheet" crossorigin href="/projects/assets/index-CLc10ihc.css">
+    <script type="module" crossorigin src="/projects/assets/index-CCV7uykS.js"></script>
+    <link rel="stylesheet" crossorigin href="/projects/assets/index-Bwd3iAXf.css">
   </head>
   <body>
     <header>
@@ -73,7 +73,7 @@
             <dt>Education</dt>
             <dd>
               University of California, Irvine <br />
-              Bachelor of Science in Computer Science
+              Bachelor of Science / Computer Science
             </dd>
           </dl>
         </section>
@@ -108,10 +108,8 @@
           <h3>Tree Component</h3>
 
           <p>
-            I wrote GCM's main tree component to support <strong>lazy-loading</strong>,
-            <strong>fast re-renders</strong>, <strong>animated changes</strong>, <strong>keyboard navigation</strong>,
-            <strong>multi-select</strong>, <strong>drag-and-drop</strong>, and more. This completely replaced a 3rd
-            party component that didn't offer the speed or features I needed.
+            I wrote GCM's main tree component to support lazy-loading, fast re-renders, animated changes, keyboard
+            navigation, multi-select, drag-and-drop, and more.
           </p>
 
           <!-- <ul class="tag-cloud" role="list">
@@ -141,14 +139,9 @@
           <h3>Query Builder</h3>
 
           <p>
-            The GCM query builder UI can search based on attributes like dates, tags, numbers, custom enums, and more.
-            It can nest boolean conditions, and subqueries. It's easy to refine complicated queries by previewing
-            results inline and using drag-and-drop to move conditions between groups.
-          </p>
-
-          <p>
-            I wrote this UI, plus the Java services to parse its internal domain-specific language and translate that
-            into the actual database queries.
+            I wrote the GCM <strong>query builder UI</strong>, plus the <strong>Java services</strong> to parse its
+            internal domain-specific language and translate that into the actual database queries. It can search based
+            on various attribute types, nest boolean conditions, and be edited using drag-and-drop.
           </p>
 
           <figure>
@@ -169,10 +162,10 @@
           <h3>History on Canvas</h3>
 
           <p>
-            This history view shows the different branches and baselines of a stream. I used a
-            <code>&lt;canvas&gt;</code> element to to draw the connections. The optional mini-map in the bottom right
-            can pan around large graphs. There are several ways to collapse, filter, and navigate to support thousands
-            of loaded nodes.
+            This history view shows the different branches and baselines of a stream. I used
+            <code>&lt;canvas&gt;</code> to to draw the connections. The optional mini-map in the bottom right can pan
+            around large graphs. There are several ways to collapse, filter, and navigate to support thousands of loaded
+            nodes.
           </p>
 
           <figure>
@@ -187,8 +180,10 @@
           <h2>DOORS Next</h2>
           <p>
             <a href="https://www.ibm.com/products/requirements-management"> IBM DOORS Next</a> is a market leading
-            requirements management tool that I worked on for a short time. I contributed many bug fixes and
-            serviceability improvements, but I also had the opportunity to refresh its query builder (aka, filters).
+            requirements management tool that I contributed many <strong>bug fixes</strong> and
+            <strong>serviceability improvements</strong> to, and also had the opportunity to refresh its
+            <strong>query builder</strong>
+            (aka, filters).
           </p>
         </section>
 
@@ -197,7 +192,7 @@
           <h3>Carbon Query Builder</h3>
 
           <p>
-            The query builder was an existing feature. I revised it to align with the
+            I revised the DOORS Next query builder it to align with the
             <a href="https://carbondesignsystem.com/">IBM Carbon Design</a> guidelines, added support for nested AND/OR
             groups, drag-and-drop reordering, and improved accessibility and usability.
           </p>
@@ -235,9 +230,8 @@
 
           <div class="content-with-image">
             <p>
-              The old query builder design let you remove conditions with a single click. For the new design I added
-              inline "Remove" confirmations directly on the buttons. My comprise that added a safety-net, but kept the
-              speed of editing customers expected.
+              The old design let you remove conditions with a single click. That was too error-prone, so I added inline
+              "Remove" confirmations as a safety-net that kept the speed of editing users expected.
             </p>
 
             <div class="vidplayer">
@@ -262,11 +256,11 @@
           <h2>Report Builder</h2>
 
           <p>
-            Report Builder creates and runs reports on artifacts that span the
+            Report Builder creates and runs reports across the
             <a href="https://www.ibm.com/products/engineering-lifecycle-management">IBM ELM</a> suite. I bootstrapped
-            the project to replace its jQuery UI with a modern TypeScript/React UI. That included initial project setup
-            with build scripts for dev and production; creating the core APIs to work with existing backend services,
-            including authentication; and building some of its core UI components.
+            the project to replace its jQuery UI with a modern TypeScript/React UI. That included initial
+            <strong>project setup</strong>, <strong>integration with with existing backend services</strong>, and
+            building some of its <strong>core UI components</strong>.
           </p>
         </section>
 
@@ -274,10 +268,9 @@
           <h3>Bulk Tag Editor</h3>
 
           <p>
-            I built a React tag component for Report Builder that needed a variation for when multiple reports are
-            selected. I worked closely with a UX designer on this version that looks similar to the single-report
-            version, but uses menus, icons, and color to present the exact changes taking place. There are a lot of
-            possible states, but the most common use cases proved easy-to-use with users.
+            I built a React tag component that needed a variation for when multiple reports are selected. I worked
+            closely with a UX designer on this version that uses menus, icons, and color to clearly communicate all
+            changes that will happen.
           </p>
 
           <div class="vidplayer">
@@ -344,18 +337,7 @@
 
     <footer>
       <div class="footer-content" id="footer-content">
-        <div>
-          <div class="made-by">Designed and built by</div>
-          <div class="my-name">★&nbsp;&nbsp;&nbsp;Jay Gillibrand&nbsp;&nbsp;&nbsp;★</div>
-
-          <img
-            src="/projects/assets/jay-head-B3xRUQYB.png"
-            srcset="/projects/assets/jay-head-B3xRUQYB.png 1x, /projects/assets/jay-head@2x-kCRiSHu8.png 2x"
-            alt="headshot of Jay"
-            class="footer-head"
-          />
-        </div>
-      </div>
+        Designed and Built / Jay Gillibrand
     </footer>
   </body>
 </html>
