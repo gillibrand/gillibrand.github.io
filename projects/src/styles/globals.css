@@ -1,0 +1,167 @@
+html.modal-open {
+  margin-inline-end: var(--scrollbar-width);
+
+  body {
+    overflow: hidden;
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Arial Black", Verdana, sans-serif;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  margin-top: 2.5rem;
+}
+
+h3 {
+  margin-top: 2rem;
+}
+
+h1,
+h2 {
+  padding-bottom: 0.25rem;
+  border-bottom: solid 0.25rem var(--border-color);
+
+  @media (width > 768px) {
+    margin-left: -1rem;
+    padding: 0 1rem 0.5rem 1rem;
+  }
+}
+
+body {
+  background: var(--yellow);
+  /* background-image: var(--body-gradient); */
+
+  background-attachment: fixed;
+  font-family: Trebuchet, Helvetica, Arial, sans-serif;
+
+  /* space for header */
+  padding: 4rem 0 0 0;
+  margin: 0;
+  font-size: 1rem;
+
+  @media (width > 768px) {
+    background-image: var(--body-gradient);
+    padding-top: 0;
+    font-size: 1.1rem;
+  }
+}
+
+/* Generic vertical spacing in main section */
+section,
+main,
+dialog {
+  & > * + * {
+    margin-block-start: 1rem;
+  }
+}
+
+section {
+  /* compensate for possible fixed header in mobile view */
+  scroll-margin-top: 4rem;
+
+  @media (width > 768px) {
+    scroll-margin-top: 1rem;
+  }
+}
+
+.sidebar-layout {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: minmax(0, 50rem);
+  gap: 4rem;
+
+  margin: 0 auto;
+  justify-content: center;
+
+  @media (width > 768px) {
+    grid-template-columns: 15rem minmax(0, 50rem);
+  }
+}
+
+video,
+img {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+}
+
+.sr-only,
+figcaption {
+  position: absolute;
+  width: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: circle(0);
+}
+
+*:focus-visible {
+  outline: solid 2px black;
+}
+
+footer {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: stretch;
+
+  color: rgba(0, 0, 0, 0.6);
+  transition: color ease 300ms;
+
+  &.is-end {
+    color: var(--text-color);
+  }
+}
+
+.footer-content {
+  border-top: solid 0.25rem var(--border-color);
+  position: sticky;
+  bottom: 0;
+  margin-top: 20vh;
+  margin-inline: auto;
+  padding: 1rem 4rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.footer-head {
+  max-width: 3rem;
+  position: absolute;
+  top: 0.75rem;
+  right: 0rem;
+
+  @media (width > 768px) {
+    transform: translateY(4.5rem);
+    transition: transform cubic-bezier(0.34, 1.56, 0.64, 1) 300ms;
+  }
+
+  footer.is-end & {
+    transform: none;
+  }
+}
+
+code {
+  font-family: Consolas, monospace;
+}
+
+.content-with-image {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: start;
+
+  & > :first-child {
+    min-width: 40%;
+    flex-basis: 0;
+    flex-grow: 1;
+  }
+}

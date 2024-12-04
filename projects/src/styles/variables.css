@@ -1,0 +1,20 @@
+:root {
+  --scroll-spacer: 0px;
+
+  --yellow: #ffc53e;
+  --light-yellow: #fede96;
+
+  --body-bg: var(--yellow);
+  --body-gradient: radial-gradient(#f9cf6c, var(--yellow));
+
+  --border-color: #cc9d33;
+
+  --button-bg: #7d6739;
+  --button-bg-hover: #a5894d;
+
+  --shadow-color: rgba(0, 0, 0, 0.2);
+
+  --z-header: 300;
+  --z-sidebar: 200;
+  --z-navunderlay: 100;
+}

@@ -19,32 +19,12 @@ need to turn off top-margin since it's not really after anything visual. */
   float: right;
 }
 
-.relative {
-  position: relative;
-}
-
-.fixed {
-  position: fixed;
-}
-
-.sticky {
-  position: sticky;
-}
-
 .ms-4 {
   margin-inline-start: 1rem;
 }
 
-.me-4 {
-  margin-inline-end: 1rem;
-}
-
 .mb-4 {
   margin-bottom: 1rem;
-}
-
-.mb-2 {
-  margin-bottom: 0.5rem;
 }
 
 .mt-2 {
@@ -55,40 +35,12 @@ need to turn off top-margin since it's not really after anything visual. */
   margin-top: 1rem;
 }
 
-.mt-8 {
-  margin-top: 2rem;
-}
-
 .opacity-0 {
   opacity: 0;
 }
 
 .text-center {
   text-align: center;
-}
-
-.flex {
-  display: flex;
-}
-
-.gap-1 {
-  gap: 0.25rem;
-}
-
-.gap-2 {
-  gap: 0.5rem;
-}
-
-.gap-4 {
-  gap: 1rem;
-}
-
-.items-center {
-  align-items: center;
-}
-
-.justify-items-center {
-  justify-items: center;
 }
 
 .clearfix::after {

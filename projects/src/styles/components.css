@@ -1,0 +1,99 @@
+.photo,
+.vidplayer__video,
+.compare {
+  border: solid 10px white;
+  box-shadow: 3px 3px 10px var(--shadow-color);
+  user-select: none;
+  -webkit-user-select: none;
+  position: relative;
+}
+
+.photo {
+  cursor: zoom-in;
+}
+
+.vidplayer {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  justify-items: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.vidplayer__video,
+.vidplayer__overlay {
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+}
+
+.vidplayer__overlay {
+  pointer-events: none;
+  z-index: 1;
+}
+
+.vidplayer__video {
+  cursor: pointer;
+  background-color: white;
+}
+
+.vidplayer__button {
+  min-width: 7rem;
+  justify-content: center;
+  display: inline-flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.skill-grid {
+  font-size: 1rem;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  gap: 0.5rem 1rem;
+
+  dt,
+  dd {
+    margin: 0;
+  }
+
+  dt {
+    font-weight: bold;
+  }
+
+  @media (width > 768px) {
+    gap: 0.25rem 3rem;
+  }
+}
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.75em;
+  gap: 0.5rem;
+  font-family: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono",
+    "Ubuntu Mono", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Consolas", "Courier New", monospace;
+
+  & > * {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 0.5rem;
+    padding: 0.125rem 0.75rem;
+    text-align: center;
+    white-space: nowrap;
+  }
+}
+
+.button {
+  padding: 0.25rem 1rem;
+  border-radius: 999px;
+  appearance: none;
+  color: white;
+  background: var(--button-bg);
+  font-size: 1rem;
+  border: none;
+  min-width: 5rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: button-bg-;
+  }
+}
