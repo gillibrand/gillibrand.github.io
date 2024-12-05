@@ -93,13 +93,24 @@ img {
   height: auto;
 }
 
-.sr-only,
-figcaption {
+.sr-only {
   position: absolute;
   width: 1px;
   padding: 0;
   overflow: hidden;
   clip-path: circle(0);
+}
+
+main figcaption {
+  text-align: center;
+  padding-top: 1rem;
+  font-size: 0.875rem;
+  color: var(--tint-text-color);
+  text-wrap: balance;
+
+  @media (width > 768px) {
+    font-size: 1rem;
+  }
 }
 
 *:focus-visible {

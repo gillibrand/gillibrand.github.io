@@ -16,6 +16,8 @@
 
   --shadow-color: rgba(0, 0, 0, 0.2);
 
+  --tint-text-color: #664f1b;
+
   --z-header: 300;
   --z-sidebar: 200;
   --z-navunderlay: 100;
