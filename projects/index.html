@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/projects/assets/favicon-32x32-CocbdEvL.png" sizes="32x32" type="image/png" />
     <title>Jay / Projects</title>
-    <script type="module" crossorigin src="/projects/assets/index-Dyim0alD.js"></script>
-    <link rel="stylesheet" crossorigin href="/projects/assets/index-DBwA9lr_.css">
+    <script type="module" crossorigin src="/projects/assets/index-KwkJoVLD.js"></script>
+    <link rel="stylesheet" crossorigin href="/projects/assets/index-vPwuPrf8.css">
   </head>
   <body>
     <header>
@@ -52,8 +52,8 @@
 
           <p class="mobile-first-child">
             Hi, I'm Jay Gillibrand, a software developer that's worked on several enterprise apps—both backend and
-            frontend. I love making rich, highly-interactive interfaces. Here's a little about me and few professional
-            and personal projects I've worked on.
+            frontend. I love making rich, highly-interactive user experiences. Here are a few professional and personal
+            projects I've worked on.
           </p>
 
           <dl class="skill-grid">
@@ -73,7 +73,7 @@
             <dt>Education</dt>
             <dd>
               University of California, Irvine <br />
-              Bachelor of Science / Computer Science
+              BS in Computer Science
             </dd>
           </dl>
         </section>
@@ -87,6 +87,11 @@
             >
             (ELM) suite. I wrote and maintained almost all of its <strong>web UI</strong>, many
             <strong>REST services</strong>, and some of the <strong>Java backend services</strong>.
+          </p>
+
+          <p>
+            Most interactions start from the custom tree control that I wrote to support lazy-loading, fast renders,
+            animated changes, keyboard navigation, multi-select, drag-and-drop, and more.
           </p>
 
           <figure>
@@ -104,7 +109,7 @@
         </section>
 
         <!-- TREE -->
-        <section id="tree-component">
+        <!-- <section id="tree-component">
           <h3>Tree Component</h3>
 
           <p>
@@ -112,18 +117,18 @@
             navigation, multi-select, drag-and-drop, and more.
           </p>
 
-          <!-- <ul class="tag-cloud" role="list">
+          !-- <ul class="tag-cloud" role="list">
             <li>lazy-loading</li>
             <li>animations</li>
             <li>keyboard nav</li>
             <li>a11y</li>
             <li>multi-select</li>
             <li>drag-and-drop</li>
-          </ul> -->
+          </ul> --
 
           <figure>
             <img
-              src="/projects/assets/tree-aJ4fI7xe.png"
+              src="images/tree.png"
               alt="GCM tree component"
               class="photo"
               width="1438"
@@ -132,7 +137,7 @@
             />
             <figcaption>The main GCM tree expanded to several requirements management (RM) streams.</figcaption>
           </figure>
-        </section>
+        </section> -->
 
         <!-- GCM QUERY EDITOR -->
         <section id="query-editor">
@@ -140,8 +145,8 @@
 
           <p>
             I wrote the GCM <strong>query builder UI</strong>, plus the <strong>Java services</strong> to parse its
-            internal domain-specific language and translate that into the actual database queries. It can search based
-            on various attribute types, nest boolean conditions, and be edited using drag-and-drop.
+            internal domain-specific query language and convert that to database queries. It can search based on various
+            attribute types and conditions, nest boolean conditions, and be edited with drag-and-drop.
           </p>
 
           <figure>
@@ -153,7 +158,7 @@
               alt="query editor"
               loading="lazy"
             />
-            <figcaption>A query with some nested OR conditions ("Some match").</figcaption>
+            <figcaption>A query with some nested OR conditions.</figcaption>
           </figure>
         </section>
 
@@ -163,16 +168,13 @@
 
           <p>
             This history view shows the different branches and baselines of a stream. I used
-            <code>&lt;canvas&gt;</code> to to draw the connections. The optional mini-map in the bottom right can pan
-            around large graphs. There are several ways to collapse, filter, and navigate to support thousands of loaded
-            nodes.
+            <code>&lt;canvas&gt;</code> to draw the connections. The optional mini-map in the bottom right can pan
+            around large graphs. There are several ways to collapse, filter, and navigate to support thousands of nodes.
           </p>
 
           <figure>
             <img src="/projects/assets/history-Be7H9lpk.png" class="photo" width="2300" height="1028" alt="history view" loading="lazy" />
-            <figcaption>
-              Inspecting the state a baseline was created from and changes to the stream since then.
-            </figcaption>
+            <figcaption>Inspecting changes since a baseline was created.</figcaption>
           </figure>
         </section>
 
@@ -180,11 +182,20 @@
           <h2>DOORS Next</h2>
           <p>
             <a href="https://www.ibm.com/products/requirements-management"> IBM DOORS Next</a> is a market leading
-            requirements management tool that I contributed many <strong>bug fixes</strong> and
-            <strong>serviceability improvements</strong> to, and also had the opportunity to refresh its
-            <strong>query builder</strong>
-            (aka, filters).
+            requirements management tool where I contributed many bug fixes and serviceability improvements. I also had
+            the opportunity to refresh its <strong>query builder</strong> component (aka, filters).
           </p>
+
+          <!-- <p>
+            <a href="https://www.ibm.com/products/requirements-management"> IBM DOORS Next</a> is a market leading
+            requirements management tool I contributed to.
+          </p>
+
+          <ul class="tag-cloud" role="list">
+            <li>Bug fixes</li>
+            <li>Serviceability improvements</li>
+            <li>Query builder refresh</li>
+          </ul> -->
         </section>
 
         <!-- RM QUERY EDITOR -->
@@ -230,7 +241,7 @@
 
           <div class="content-with-image">
             <p>
-              The old design let you remove conditions with a single click. That was too error-prone, so I added inline
+              The old design let you remove conditions with a single click. That was error-prone, so I added inline
               "Remove" confirmations as a safety-net that kept the speed of editing users expected.
             </p>
 
@@ -256,12 +267,58 @@
           <h2>Report Builder</h2>
 
           <p>
+            <a
+              href="https://www.ibm.com/docs/en/engineering-lifecycle-management-suite/lifecycle-management/7.0.3?topic=service-jazz-reporting-components"
+            >
+              Report Builder</a
+            >
+            creates and runs reports across the
+            <a href="https://www.ibm.com/products/engineering-lifecycle-management">IBM ELM</a> suite. I bootstrapped
+            the project to replace its jQuery UI with a modern <strong>TypeScript/React</strong> UI. That included
+            initial <strong>project setup</strong>, and building some of its <strong>core React components</strong>.
+          </p>
+
+          <figure>
+            <img
+              src="/projects/assets/jrs-folder@2x-DWIX035W.png"
+              class="photo"
+              width="1018"
+              height="510"
+              alt="report builder ui"
+              loading="lazy"
+            />
+            <figcaption>Dragging two reports to a folder in Report Builder.</figcaption>
+          </figure>
+
+          <!-- <p>
+            Report Builder creates and runs reports across the
+            <a href="https://www.ibm.com/products/engineering-lifecycle-management">IBM ELM</a> suite. I bootstrapped it
+            modern UI project.
+          </p> -->
+
+          <!-- <ul class="tag-cloud" role="list">
+            <li>Project setup</li>
+            <li>TypeScript</li>
+            <li>React</li>
+            <li>replaced jQuery with TypeScript/React</li>
+            <li>React UI components</li>
+          </ul> -->
+
+          <!-- 
+          <p>
             Report Builder creates and runs reports across the
             <a href="https://www.ibm.com/products/engineering-lifecycle-management">IBM ELM</a> suite. I bootstrapped
-            the project to replace its jQuery UI with a modern TypeScript/React UI. That included initial
-            <strong>project setup</strong>, <strong>integration with with existing backend services</strong>, and
-            building some of its <strong>core UI components</strong>.
+            its modern UI rewrite:
           </p>
+
+          <ul>
+            <li><strong>Project setup</strong> and build scripts.</li>
+            <ul>
+              <li>Replaced jQuery with <strong>TypeScript/React</strong></li>
+            </ul>
+            <li>JavaScript infrastructure to work with backend services.</li>
+            <li>Several core <strong>React UI components</strong>.</li>
+          </ul> -->
         </section>
 
         <section id="tags">
@@ -281,6 +338,28 @@
             <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='50'%20height='50'%20fill='none'%3e%3ccircle%20cx='25'%20cy='25'%20r='24.5'%20fill='%23000'%20stroke='%23fff'%20opacity='.6'/%3e%3cpath%20fill='%23fff'%20d='M40%2025%2017.5%2037.99V12.01z'%20opacity='.9'/%3e%3c/svg%3e" class="vidplayer__overlay" />
             <button class="vidplayer__button button mt-2">Play</button>
           </div>
+        </section>
+
+        <!-- SYNERGY -->
+        <section id="synergy">
+          <h2>Synergy / Change</h2>
+          <p>
+            <a href="https://www.ibm.com/products/rational-synergy">Rational Synergy</a> and
+            <a href="https://www.ibm.com/products/rational-change">Rational Change</a> are a closely related pair of
+            version control and defect tracking tools.
+          </p>
+
+          <ul>
+            <li>Worked on the Synergy <strong>Java API</strong> from the new client to the legacy server.</li>
+            <li>Transitioned proprietary Change HTML widgets to <strong>Dojo widgets</strong>.</li>
+            <li>Wrote a robust <strong>Java sync service</strong> to mirror Change artifacts between databases.</li>
+          </ul>
+
+          <!-- <ul class="tag-cloud" role="list">
+            <li>Java API to legacy server</li>
+            <li>Upgraded proprietary widgets to Dojo</li>
+            <li>Java service to sync remote database</li>
+          </ul> -->
         </section>
 
         <!-- PLAYDATE -->
@@ -336,8 +415,7 @@
     </div>
 
     <footer>
-      <div class="footer-content" id="footer-content">
-        Designed and Built / Jay Gillibrand
+      <div class="footer-content" id="footer-content">Designed and Built / Jay Gillibrand</div>
     </footer>
   </body>
 </html>
