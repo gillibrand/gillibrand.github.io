@@ -72,7 +72,7 @@
             <dt>Education</dt>
             <dd>
               University of California, Irvine <br />
-              Bachelor of Science / Computer Science
+              BS in Computer Science
             </dd>
           </dl>
         </section>
@@ -139,8 +139,8 @@
 
           <p>
             I wrote the GCM <strong>query builder UI</strong>, plus the <strong>Java services</strong> to parse its
-            internal domain-specific language and translate that into the actual database queries. It can search based
-            on various attribute types, nest boolean conditions, and be edited using drag-and-drop.
+            internal domain-specific query language and translate that into database queries. It can search based on
+            various attribute types, nest boolean conditions, and be edited using drag-and-drop.
           </p>
 
           <figure>
@@ -162,9 +162,8 @@
 
           <p>
             This history view shows the different branches and baselines of a stream. I used
-            <code>&lt;canvas&gt;</code> to to draw the connections. The optional mini-map in the bottom right can pan
-            around large graphs. There are several ways to collapse, filter, and navigate to support thousands of loaded
-            nodes.
+            <code>&lt;canvas&gt;</code> to draw the connections. The optional mini-map in the bottom right can pan
+            around large graphs. There are several ways to collapse, filter, and navigate to support thousands of nodes.
           </p>
 
           <figure>
@@ -179,11 +178,20 @@
           <h2>DOORS Next</h2>
           <p>
             <a href="https://www.ibm.com/products/requirements-management"> IBM DOORS Next</a> is a market leading
-            requirements management tool that I contributed many <strong>bug fixes</strong> and
-            <strong>serviceability improvements</strong> to, and also had the opportunity to refresh its
-            <strong>query builder</strong>
-            (aka, filters).
+            requirements management tool where I contributed many bug fixes and serviceability improvements. I also had
+            the opportunity to refresh its <strong>query builder</strong> component (aka, filters).
           </p>
+
+          <!-- <p>
+            <a href="https://www.ibm.com/products/requirements-management"> IBM DOORS Next</a> is a market leading
+            requirements management tool I contributed to.
+          </p>
+
+          <ul class="tag-cloud" role="list">
+            <li>Bug fixes</li>
+            <li>Serviceability improvements</li>
+            <li>Query builder refresh</li>
+          </ul> -->
         </section>
 
         <!-- RM QUERY EDITOR -->
@@ -229,7 +237,7 @@
 
           <div class="content-with-image">
             <p>
-              The old design let you remove conditions with a single click. That was too error-prone, so I added inline
+              The old design let you remove conditions with a single click. That was error-prone, so I added inline
               "Remove" confirmations as a safety-net that kept the speed of editing users expected.
             </p>
 
@@ -255,12 +263,46 @@
           <h2>Report Builder</h2>
 
           <p>
+            <a
+              href="https://www.ibm.com/docs/en/engineering-lifecycle-management-suite/lifecycle-management/7.0.3?topic=service-jazz-reporting-components"
+            >
+              Report Builder</a
+            >
+            creates and runs reports across the
+            <a href="https://www.ibm.com/products/engineering-lifecycle-management">IBM ELM</a> suite. I bootstrapped
+            the project to replace its jQuery UI with a modern <strong>TypeScript/React</strong> UI. That included
+            initial <strong>project setup</strong>, and building some of its <strong>core React components</strong>.
+          </p>
+
+          <!-- <p>
+            Report Builder creates and runs reports across the
+            <a href="https://www.ibm.com/products/engineering-lifecycle-management">IBM ELM</a> suite. I bootstrapped it
+            modern UI project.
+          </p> -->
+
+          <!-- <ul class="tag-cloud" role="list">
+            <li>Project setup</li>
+            <li>TypeScript</li>
+            <li>React</li>
+            <li>replaced jQuery with TypeScript/React</li>
+            <li>React UI components</li>
+          </ul> -->
+
+          <!-- 
+          <p>
             Report Builder creates and runs reports across the
             <a href="https://www.ibm.com/products/engineering-lifecycle-management">IBM ELM</a> suite. I bootstrapped
-            the project to replace its jQuery UI with a modern TypeScript/React UI. That included initial
-            <strong>project setup</strong>, <strong>integration with with existing backend services</strong>, and
-            building some of its <strong>core UI components</strong>.
+            its modern UI rewrite:
           </p>
+
+          <ul>
+            <li><strong>Project setup</strong> and build scripts.</li>
+            <ul>
+              <li>Replaced jQuery with <strong>TypeScript/React</strong></li>
+            </ul>
+            <li>JavaScript infrastructure to work with backend services.</li>
+            <li>Several core <strong>React UI components</strong>.</li>
+          </ul> -->
         </section>
 
         <section id="tags">
@@ -280,6 +322,28 @@
             <img src="images/play-overlay.svg" class="vidplayer__overlay" />
             <button class="vidplayer__button button mt-2">Play</button>
           </div>
+        </section>
+
+        <!-- SYNERGY -->
+        <section id="synergy">
+          <h2>Synergy / Change</h2>
+          <p>
+            <a href="https://www.ibm.com/products/rational-synergy">Rational Synergy</a> and
+            <a href="https://www.ibm.com/products/rational-change">Rational Change</a> are a closely related pair of
+            version control and defect tracking tools.
+          </p>
+
+          <ul>
+            <li>Worked on the Synergy <strong>Java API</strong> from the new client to the legacy server.</li>
+            <li>Transitioned proprietary Change HTML widgets to <strong>Dojo widgets</strong>.</li>
+            <li>Wrote a robust <strong>Java sync service</strong> to mirror Change artifacts between databases.</li>
+          </ul>
+
+          <!-- <ul class="tag-cloud" role="list">
+            <li>Java API to legacy server</li>
+            <li>Upgraded proprietary widgets to Dojo</li>
+            <li>Java service to sync remote database</li>
+          </ul> -->
         </section>
 
         <!-- PLAYDATE -->
@@ -335,8 +399,7 @@
     </div>
 
     <footer>
-      <div class="footer-content" id="footer-content">
-        Designed and Built / Jay Gillibrand
+      <div class="footer-content" id="footer-content">Designed and Built / Jay Gillibrand</div>
     </footer>
     <script src="src/index.ts" type="module"></script>
   </body>

@@ -151,3 +151,27 @@ code {
     flex-grow: 1;
   }
 }
+
+ul,
+ol {
+  &.bullets {
+    list-style: none;
+
+    li {
+      position: relative;
+    }
+
+    li::before {
+      content: "";
+      position: absolute;
+
+      width: 0.5rem;
+      height: 0.25rem;
+      background-color: black;
+      background-color: var(--dash-color);
+      inset-inline-start: -1.25rem;
+      inset-block-start: 50%;
+      translate: 0 -50%;
+    }
+  }
+}
