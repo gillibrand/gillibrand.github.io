@@ -28,21 +28,6 @@
   cursor: zoom-in;
 }
 
-.vidplayer {
-  display: grid;
-  grid-template-columns: 1fr;
-
-  justify-items: center;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.vidplayer__video,
-.vidplayer__overlay {
-  grid-row: 1 / 1;
-  grid-column: 1 / 1;
-}
-
 .vidplayer__overlay {
   pointer-events: none;
   z-index: 1;

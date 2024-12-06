@@ -54,12 +54,27 @@ body {
   }
 }
 
-/* Generic vertical spacing in main section */
+/* Generic vertical spacing in main sections */
 section,
 main,
-dialog {
+dialog,
+.stack {
   & > * + * {
     margin-block-start: 1rem;
+  }
+}
+
+/* place all child elements centered directly on top of each other */
+.overlay {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  justify-items: center;
+  align-items: center;
+
+  & > * {
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
   }
 }
 

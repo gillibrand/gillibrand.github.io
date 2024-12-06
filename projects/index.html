@@ -166,7 +166,7 @@
             groups, drag-and-drop reordering, and enhanced accessibility and usability.
           </p>
 
-          <figure>
+          <figure class="stack">
             <div class="compare compare--checked" id="rm-filters">
               <img
                 src="images/rm-filters-old-alt.png"
@@ -184,7 +184,7 @@
               />
             </div>
 
-            <div class="text-center mt-4">
+            <div class="text-center">
               <label class="toggle" aria-label="show after image">
                 <span class="toggle__one" aria-hidden="true"> Before </span>
                 <span class="toggle__two" aria-hidden="true"> After </span>
@@ -203,18 +203,20 @@
               "Remove" confirmations as a safety-net that kept the speed of editing users expected.
             </p>
 
-            <div class="vidplayer">
-              <video
-                class="vidplayer__video"
-                preload="none"
-                width="300"
-                height="190"
-                poster="images/confirm-delete-button.png"
-              >
-                <source src="images/confirm-delete-button.mp4" type="video/mp4" />
-                Video not supported
-              </video>
-              <img src="images/play-overlay.svg" class="vidplayer__overlay" />
+            <div class="vidplayer stack text-center">
+              <div class="overlay">
+                <video
+                  class="vidplayer__video"
+                  preload="none"
+                  width="300"
+                  height="190"
+                  poster="images/confirm-delete-button.png"
+                >
+                  <source src="images/confirm-delete-button.mp4" type="video/mp4" />
+                  Video not supported
+                </video>
+                <img src="images/play-overlay.svg" class="vidplayer__overlay" />
+              </div>
               <button class="vidplayer__button button mt-2">Play</button>
             </div>
           </div>
@@ -259,12 +261,14 @@
             changes that will happen.
           </p>
 
-          <div class="vidplayer">
-            <video class="vidplayer__video" preload="none" width="886" height="550" poster="images/jrs-poster.png">
-              <source src="images/jrs-tags.mp4" type="video/mp4" />
-              Video not supported
-            </video>
-            <img src="images/play-overlay.svg" class="vidplayer__overlay" />
+          <div class="vidplayer stack text-center">
+            <div class="overlay">
+              <video class="vidplayer__video" preload="none" width="886" height="550" poster="images/jrs-poster.png">
+                <source src="images/jrs-tags.mp4" type="video/mp4" />
+                Video not supported
+              </video>
+              <img src="images/play-overlay.svg" class="vidplayer__overlay" />
+            </div>
             <button class="vidplayer__button button mt-2">Play</button>
           </div>
         </section>
