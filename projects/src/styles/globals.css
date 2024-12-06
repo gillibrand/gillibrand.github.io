@@ -82,8 +82,16 @@ section {
   /* compensate for possible fixed header in mobile view */
   scroll-margin-top: 4rem;
 
+  main &:last-child {
+    min-height: 46vh;
+  }
+
   @media (width > 768px) {
     scroll-margin-top: 1rem;
+
+    main &:last-child {
+      min-height: 49vh;
+    }
   }
 }
 
@@ -133,7 +141,7 @@ main figcaption {
 }
 
 footer {
-  min-height: 60vh;
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: end;

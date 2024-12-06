@@ -61,12 +61,14 @@
     font-weight: bold;
   }
 
-  dd {
-    text-wrap: balance;
-  }
-
   @media (width > 768px) {
     gap: 0.5rem 3rem;
+  }
+}
+
+.skill-grid--balanced {
+  dd {
+    text-wrap: balance;
   }
 }
 

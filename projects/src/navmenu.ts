@@ -82,7 +82,7 @@ function initIntersectionObserver() {
   // Create an IntersectionObserver instance
   const observer = new IntersectionObserver(handleIntersection, {
     root: null, // Use the viewport as the root
-    rootMargin: "0px 0px -75% 0px",
+    rootMargin: "0px 0px -80% 0px",
     threshold: 0, // Trigger as soon as the element is within the margin
   });
 
