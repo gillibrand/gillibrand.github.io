@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/projects/assets/favicon-32x32-CocbdEvL.png" sizes="32x32" type="image/png" />
     <title>Jay / Projects</title>
-    <script type="module" crossorigin src="/projects/assets/index-KwkJoVLD.js"></script>
-    <link rel="stylesheet" crossorigin href="/projects/assets/index-vPwuPrf8.css">
+    <script type="module" crossorigin src="/projects/assets/index-Blcn1_A4.js"></script>
+    <link rel="stylesheet" crossorigin href="/projects/assets/index-BvSPdf4F.css">
   </head>
   <body>
     <header>
@@ -89,8 +89,8 @@
           </p>
 
           <p>
-            Most interactions start from the custom tree control that I wrote to support lazy-loading, fast renders,
-            animated changes, keyboard navigation, multi-select, drag-and-drop, and more.
+            I developed the GCM tree component to support lazy-loading, fast renders, animated changes, keyboard
+            navigation, multi-select, drag-and-drop, and more.
           </p>
 
           <figure>
@@ -167,7 +167,7 @@
             groups, drag-and-drop reordering, and enhanced accessibility and usability.
           </p>
 
-          <figure>
+          <figure class="stack">
             <div class="compare compare--checked" id="rm-filters">
               <img
                 src="/projects/assets/rm-filters-old-alt-CwFSAQVp.png"
@@ -185,7 +185,7 @@
               />
             </div>
 
-            <div class="text-center mt-4">
+            <div class="text-center">
               <label class="toggle" aria-label="show after image">
                 <span class="toggle__one" aria-hidden="true"> Before </span>
                 <span class="toggle__two" aria-hidden="true"> After </span>
@@ -204,18 +204,20 @@
               "Remove" confirmations as a safety-net that kept the speed of editing users expected.
             </p>
 
-            <div class="vidplayer">
-              <video
-                class="vidplayer__video"
-                preload="none"
-                width="300"
-                height="190"
-                poster="/projects/assets/confirm-delete-button-BLlBPInY.png"
-              >
-                <source src="/projects/assets/confirm-delete-button-CI7QBSUF.mp4" type="video/mp4" />
-                Video not supported
-              </video>
-              <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='50'%20height='50'%20fill='none'%3e%3ccircle%20cx='25'%20cy='25'%20r='24.5'%20fill='%23000'%20stroke='%23fff'%20opacity='.6'/%3e%3cpath%20fill='%23fff'%20d='M40%2025%2017.5%2037.99V12.01z'%20opacity='.9'/%3e%3c/svg%3e" class="vidplayer__overlay" />
+            <div class="vidplayer stack text-center">
+              <div class="overlay">
+                <video
+                  class="vidplayer__video"
+                  preload="none"
+                  width="300"
+                  height="190"
+                  poster="/projects/assets/confirm-delete-button-BLlBPInY.png"
+                >
+                  <source src="/projects/assets/confirm-delete-button-CI7QBSUF.mp4" type="video/mp4" />
+                  Video not supported
+                </video>
+                <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='50'%20height='50'%20fill='none'%3e%3ccircle%20cx='25'%20cy='25'%20r='24.5'%20fill='%23000'%20stroke='%23fff'%20opacity='.6'/%3e%3cpath%20fill='%23fff'%20d='M40%2025%2017.5%2037.99V12.01z'%20opacity='.9'/%3e%3c/svg%3e" class="vidplayer__overlay" />
+              </div>
               <button class="vidplayer__button button mt-2">Play</button>
             </div>
           </div>
@@ -235,7 +237,7 @@
             <a href="https://www.ibm.com/products/engineering-lifecycle-management">IBM ELM</a> suite. I bootstrapped
             the project to replace its jQuery UI with a modern <strong>TypeScript/React</strong> UI. That included
             initial <strong>project setup</strong>, and building some of its <strong>core React components</strong>, and
-            adding features like <strong>drag-and-drop</strong> support to the common table component.
+            adding features like <strong>drag-and-drop</strong> support to the cross-product table component.
           </p>
 
           <figure>
@@ -257,15 +259,17 @@
           <p>
             I built a React tag component that needed a variation for when multiple reports are selected. I worked
             closely with a UX designer on this version that uses menus, icons, and color to effectively communicate all
-            changes that will happen.
+            changes that will happen. Keyboard friendly.
           </p>
 
-          <div class="vidplayer">
-            <video class="vidplayer__video" preload="none" width="886" height="550" poster="/projects/assets/jrs-poster-By8NbNL_.png">
-              <source src="/projects/assets/jrs-tags-BuJwK2GG.mp4" type="video/mp4" />
-              Video not supported
-            </video>
-            <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='50'%20height='50'%20fill='none'%3e%3ccircle%20cx='25'%20cy='25'%20r='24.5'%20fill='%23000'%20stroke='%23fff'%20opacity='.6'/%3e%3cpath%20fill='%23fff'%20d='M40%2025%2017.5%2037.99V12.01z'%20opacity='.9'/%3e%3c/svg%3e" class="vidplayer__overlay" />
+          <div class="vidplayer stack text-center">
+            <div class="overlay">
+              <video class="vidplayer__video" preload="none" width="886" height="550" poster="/projects/assets/jrs-poster-By8NbNL_.png">
+                <source src="/projects/assets/jrs-tags-BuJwK2GG.mp4" type="video/mp4" />
+                Video not supported
+              </video>
+              <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='50'%20height='50'%20fill='none'%3e%3ccircle%20cx='25'%20cy='25'%20r='24.5'%20fill='%23000'%20stroke='%23fff'%20opacity='.6'/%3e%3cpath%20fill='%23fff'%20d='M40%2025%2017.5%2037.99V12.01z'%20opacity='.9'/%3e%3c/svg%3e" class="vidplayer__overlay" />
+            </div>
             <button class="vidplayer__button button mt-2">Play</button>
           </div>
         </section>
