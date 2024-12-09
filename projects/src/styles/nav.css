@@ -45,6 +45,7 @@ header {
   }
 
   max-height: 100vh;
+  max-height: 100dvh;
   overflow: auto;
 
   @media (width <= 768px) {
