@@ -3,11 +3,20 @@
 
   --yellow: #ffc53e;
   --light-yellow: #fede96;
+  --mustard-yellow: #cc9d33;
+
+  --dull-yellow: #e4b343;
+
+  --dark-gray: #3c3c3c;
+  --dark-gray: #252323;
 
   --body-bg: var(--yellow);
   --body-gradient: radial-gradient(#f9cf6c, var(--yellow));
+  --body-color: var(black);
 
-  --border-color: #cc9d33;
+  --heading-color: black;
+
+  --border-color: var(--mustard-yellow);
 
   --button-bg: #7d6739;
   --button-bg-hover: #a5894d;
@@ -18,7 +27,33 @@
 
   --tint-text-color: #664f1b;
 
+  --nav-hover: #fcd57b;
+  --nav-active: #fedb8d;
+  --nav-selected: #fedf9c;
+  --nav-selected-text-color: inherit;
+
+  --hamburger-bg: black;
+
   --z-header: 300;
   --z-sidebar: 200;
   --z-navunderlay: 100;
 }
+
+/* :root body.dark {
+  --body-bg: var(--dark-gray);
+  --body-color: white;
+  --body-color: #ddd;
+  --body-gradient: none;
+  --heading-color: var(--dull-yellow);
+  --heading-color: var(--yellow);
+  --heading-color: var(--dull-yellow);
+  --border-color: var(--yellow);
+
+  --nav-hover: #636363;
+  --nav-active: #777777;
+  --nav-selected: var(--dull-yellow);
+  --nav-selected-text-color: black;
+
+  --hamburger-bg: var(--dull-yellow);
+  --hamburger-bg: var(--yellow);
+} */

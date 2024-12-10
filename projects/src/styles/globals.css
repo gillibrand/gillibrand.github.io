@@ -10,6 +10,7 @@ h1,
 h2,
 h3 {
   font-family: "Arial Black", Verdana, sans-serif;
+  color: var(--heading-color);
 }
 
 h1 {
@@ -36,8 +37,8 @@ h2 {
 }
 
 body {
-  background: var(--yellow);
-  /* background-image: var(--body-gradient); */
+  background: var(--body-bg);
+  color: var(--body-color);
 
   background-attachment: fixed;
   font-family: Trebuchet, Helvetica, Arial, sans-serif;
@@ -147,12 +148,7 @@ footer {
   justify-content: end;
   align-items: stretch;
 
-  color: rgba(0, 0, 0, 0.6);
-  transition: color ease 300ms;
-
-  &.is-end {
-    color: var(--text-color);
-  }
+  color: var(--body-color);
 }
 
 .footer-content {
@@ -165,6 +161,14 @@ footer {
   text-align: center;
   overflow: hidden;
   font-size: 1rem;
+
+  & > * {
+    transition: opacity ease 300ms;
+    opacity: 0.7;
+  }
+}
+.footer.is-end .footer-content > * {
+  opacity: 1;
 }
 
 code {

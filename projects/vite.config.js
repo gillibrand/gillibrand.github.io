@@ -1,4 +1,5 @@
 import { defineConfig } from "vite";
+import { ViteMinifyPlugin } from "vite-plugin-minify";
 
 export default defineConfig(({ command, mode }) => {
   return {
@@ -6,5 +7,6 @@ export default defineConfig(({ command, mode }) => {
     build: {
       outDir: "../dist/projects",
     },
+    plugins: [ViteMinifyPlugin({})],
   };
 });
