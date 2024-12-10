@@ -1,11 +1,12 @@
 import { hideScrollbar, showScrollbar } from "./getScrollbarWidth";
 import { isReduceMotion } from "./isReduceMotion";
 
-const photos = document.querySelectorAll(".photo");
+const photoButtons = document.querySelectorAll<HTMLButtonElement>("button:has(> .photo)");
 
-photos.forEach((photo) => {
-  photo.addEventListener("click", () => {
-    openLightbox(photo as HTMLImageElement);
+photoButtons.forEach((photoButton) => {
+  const image = photoButton.querySelector("img")!;
+  photoButton.addEventListener("click", () => {
+    openLightbox(image);
   });
 });
 
@@ -62,6 +63,13 @@ async function openLightbox(photo: HTMLImageElement) {
     closeLightbox();
   });
 
+  lightbox.addEventListener("keydown", (e) => {
+    if (e.key === " ") {
+      e.preventDefault();
+      closeLightbox();
+    }
+  });
+
   document.body.appendChild(lightbox);
   lightbox.showModal();
 
@@ -69,7 +77,8 @@ async function openLightbox(photo: HTMLImageElement) {
   // animate if added before then
   setTimeout(() => lightbox.classList.add("is-open"));
 
-  photo.style.visibility = "hidden";
+  const photoButton = photo.parentNode as HTMLButtonElement;
+  photoButton.style.visibility = "hidden";
 
   // Animate in
   const rect = photo.getBoundingClientRect();
@@ -118,7 +127,7 @@ async function openLightbox(photo: HTMLImageElement) {
       ).finished;
     }
 
-    photo.style.visibility = "";
+    photoButton.style.visibility = "";
 
     lightbox.close();
     lightbox.parentElement?.removeChild(lightbox);

@@ -24,6 +24,14 @@
   position: relative;
 }
 
+button:has(> .photo) {
+  appearance: none;
+  padding: 0;
+  border: none;
+  outline-offset: 1px;
+  background-color: white;
+}
+
 .photo {
   cursor: zoom-in;
 }
