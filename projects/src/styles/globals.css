@@ -51,7 +51,7 @@ body {
   @media (width > 768px) {
     background-image: var(--body-gradient);
     padding-top: 0;
-    font-size: 1.1rem;
+    font-size: 1.0625rem;
   }
 }
 
