@@ -44,7 +44,6 @@ header {
     top: 2rem;
   }
 
-  max-height: 100vh;
   max-height: 100dvh;
   overflow: auto;
 
@@ -115,6 +114,14 @@ header {
   padding: 0;
   margin: 0;
   position: relative;
+
+  /* work around for very short screens but are not in mobile layout yet. Ensure the sidebar font is
+  small enough to not need to scroll. Scrolling is better, but I noticed this late.
+  TODO: add scrolling support to floating, non-mobile sidebar.*/
+  --max-small-font: initial;
+  @media (width > 768px) {
+    --max-small-font: 3vh;
+  }
 }
 
 .navmenu::before,
@@ -212,12 +219,12 @@ body.dark {
     pointer-events: none;
   }
 
-  font-size: 0.9375rem;
+  font-size: min(0.9375rem, var(--max-small-font));
 }
 
 .navmenu__entry--group {
   padding-left: 2rem;
-  font-size: 1rem;
+  font-size: min(1rem, var(--max-small-font));
 }
 
 .navunderlay {
