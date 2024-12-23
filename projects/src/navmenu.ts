@@ -21,6 +21,13 @@ function markSelected(a?: HTMLAnchorElement | HTMLHeadingElement) {
   }
 }
 
+/**
+ * Initializes the navigation menu by generating links for each section in the main content.
+ *
+ * @remarks
+ * - The function assumes the existence of a global `navmenu` element and a `closeMenu` function.
+ * - The `isReduceMotion` function is used to determine whether to use smooth scrolling or not.
+ */
 function initNavmenu() {
   const linkFrags: string[] = [];
   document.querySelectorAll("main section[id]").forEach((section) => {
@@ -65,6 +72,21 @@ function initNavmenu() {
   });
 }
 
+/**
+ * Initializes an IntersectionObserver to monitor the visibility of section headers and update the
+ * navigation menu accordingly.
+ *
+ * The observer triggers a callback function when a header element intersects with the viewport. The
+ * callback function marks the corresponding navigation link as selected.
+ *
+ * The function also checks the current scroll position and marks the appropriate navigation link as
+ * selected based on the initial scroll position.
+ *
+ * @remarks
+ * This function assumes that each section has an `id` attribute and contains a header element
+ * (`h1`, `h2`, or `h3`). It also assumes that the navigation links have a `data-to` attribute
+ * corresponding to the section `id`.
+ */
 function initIntersectionObserver() {
   // Callback function for the observer. Checks if intersecting a header
   function handleIntersection(entries: IntersectionObserverEntry[], observer: IntersectionObserver) {

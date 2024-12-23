@@ -1,6 +1,8 @@
 import { hideScrollbar, showScrollbar } from "./getScrollbarWidth";
 import { isReduceMotion } from "./isReduceMotion";
 
+// Finds all photo buttons and adds a click event listener to open the lightbox with the photo.
+// Assume the button has an image child with the class "photo".
 const photoButtons = document.querySelectorAll<HTMLButtonElement>("button:has(> .photo)");
 
 photoButtons.forEach((photoButton) => {
@@ -10,12 +12,26 @@ photoButtons.forEach((photoButton) => {
   });
 });
 
+/**
+ * Converts an HTML string into a DOM element.
+ *
+ * @param html The HTML string to convert.
+ * @returns The first DOM element created from the HTML string.
+ */
 function htmlToDom(html: string) {
   const dummy = document.createElement("div");
   dummy.innerHTML = html;
   return dummy.firstElementChild as HTMLElement;
 }
 
+/**
+ * Asynchronously builds a lightbox dialog element for a given photo.
+ *
+ * @param photo The HTMLImageElement for which the lightbox is being built.
+ * @returns A promise that resolves to an HTMLDialogElement representing the lightbox. Used since
+ *          the new photo must be loaded before the lightbox can be displayed.
+ * @throws An error if the image fails to load.
+ */
 async function buildLightbox(photo: HTMLImageElement) {
   const figure = photo.closest("figure");
   const caption = figure?.querySelector("figcaption");
@@ -41,14 +57,31 @@ async function buildLightbox(photo: HTMLImageElement) {
   });
 }
 
+/**
+ * Opens a lightbox to display a given photo with animations and event listeners.
+ *
+ *
+ * This function performs the following actions:
+ * - Hides the scrollbar.
+ * - Builds and displays the lightbox with the provided photo.
+ * - Adds event listeners for closing the lightbox on click, swipe, cancel, and keydown events.
+ * - Animates the photo into the lightbox.
+ * - Hides the original photo button.
+ *
+ * The lightbox can be closed by clicking outside the photo, swiping, pressing the cancel button, or
+ * pressing the space key.
+ *
+ * @param photo - The image element of the photo to display in the lightbox.
+ * @returns A promise that resolves when the lightbox is fully opened and animated.
+ */
 async function openLightbox(photo: HTMLImageElement) {
   hideScrollbar();
-  const lightbox = await buildLightbox(photo);
+  const lightboxDialog = await buildLightbox(photo);
 
-  const newPhoto = lightbox.querySelector(".lightbox__photo") as HTMLElement;
-  const text = lightbox.querySelector(".lightbox__text")!;
+  const newPhoto = lightboxDialog.querySelector(".lightbox__photo") as HTMLElement;
+  const text = lightboxDialog.querySelector(".lightbox__text")!;
 
-  lightbox.addEventListener("click", (e) => {
+  lightboxDialog.addEventListener("click", (e) => {
     const el = e.target as HTMLElement;
     if (el.nodeName === "P") return;
 
@@ -56,26 +89,26 @@ async function openLightbox(photo: HTMLImageElement) {
     closeLightbox();
   });
 
-  addOnSwipe(lightbox, closeLightbox);
+  addOnSwipe(lightboxDialog, closeLightbox);
 
-  lightbox.addEventListener("cancel", (e) => {
+  lightboxDialog.addEventListener("cancel", (e) => {
     e.preventDefault();
     closeLightbox();
   });
 
-  lightbox.addEventListener("keydown", (e) => {
+  lightboxDialog.addEventListener("keydown", (e) => {
     if (e.key === " ") {
       e.preventDefault();
       closeLightbox();
     }
   });
 
-  document.body.appendChild(lightbox);
-  lightbox.showModal();
+  document.body.appendChild(lightboxDialog);
+  lightboxDialog.showModal();
 
   // this delay is for Safari, which still has the dialog as display:none for one tick so will not
   // animate if added before then
-  setTimeout(() => lightbox.classList.add("is-open"));
+  setTimeout(() => lightboxDialog.classList.add("is-open"));
 
   const photoButton = photo.parentNode as HTMLButtonElement;
   photoButton.style.visibility = "hidden";
@@ -116,7 +149,7 @@ async function openLightbox(photo: HTMLImageElement) {
 
     newPhoto.style.borderWidth = `${10 / scaleH}px`;
 
-    lightbox.classList.remove("is-open");
+    lightboxDialog.classList.remove("is-open");
 
     if (!isReduceMotion()) {
       await newPhoto.animate(
@@ -129,8 +162,8 @@ async function openLightbox(photo: HTMLImageElement) {
 
     photoButton.style.visibility = "";
 
-    lightbox.close();
-    lightbox.parentElement?.removeChild(lightbox);
+    lightboxDialog.close();
+    lightboxDialog.parentElement?.removeChild(lightboxDialog);
     showScrollbar();
   }
 }

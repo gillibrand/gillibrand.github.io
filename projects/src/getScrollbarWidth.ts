@@ -1,3 +1,7 @@
+/**
+ * The cached width of the scrollbar. Can be undefined if not yet computed or "0" is scrollbars are
+ * hidden by default.
+ */
 let scrollbarWidth: number | undefined;
 
 /**

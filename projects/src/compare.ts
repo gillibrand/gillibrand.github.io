@@ -1,6 +1,19 @@
-const toggles = document.querySelectorAll<HTMLInputElement>(".toggle__checkbox");
+/**
+ * A toggle input, but it should have a `data-compare` attribute with the ID of a parent element
+ * containing two images to compare.
+ */
+interface ToggleInput extends HTMLInputElement {
+  dataset: {
+    compare?: string;
+  };
+}
 
-toggles.forEach((toggle) => {
+/**
+ * Add event listeners to a toggle input to swap compare images. Only call this once per toggle.
+ *
+ * @param toggle Toggle button to swap compare images.
+ */
+function initToggle(toggle: ToggleInput): void {
   const compareId = toggle.dataset["compare"];
   if (!compareId) return;
 
@@ -22,4 +35,6 @@ toggles.forEach((toggle) => {
   }
 
   compare.addEventListener("click", changeToggle);
-});
+}
+
+document.querySelectorAll<HTMLInputElement>(".toggle__checkbox").forEach(initToggle);
