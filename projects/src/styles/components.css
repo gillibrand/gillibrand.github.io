@@ -77,6 +77,7 @@ button:has(> .photo) {
 .skill-grid--balanced {
   dd {
     text-wrap: balance;
+    max-width: 33rem;
   }
 }
 

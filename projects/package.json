@@ -4,6 +4,7 @@
   "main": "index.html",
   "scripts": {
     "dev": "vite --host",
+    "start": "npm run dev",
     "build": "vite build",
     "preview": "vite preview --host --mode preview"
   },
