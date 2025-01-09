@@ -9,8 +9,14 @@
   min-width: 5rem;
   cursor: pointer;
 
+  outline-offset: 1px;
+
   &:hover {
     background-color: var(--button-bg-hover);
+  }
+
+  &:active {
+    background-color: var(--button-bg-active);
   }
 }
 
