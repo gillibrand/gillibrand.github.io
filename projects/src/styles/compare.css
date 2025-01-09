@@ -56,7 +56,7 @@
   font-size: 0.875rem;
 
   &:hover {
-    background-color: #a5894d;
+    background-color: var(--button-bg-hover);
   }
 
   * {
