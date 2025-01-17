@@ -5,7 +5,7 @@ export default defineConfig(({ command, mode }) => {
   return {
     base: command === "build" || mode === "preview" ? "/projects/" : "/",
     build: {
-      outDir: "../dist/projects",
+      outDir: "../../projects",
     },
     plugins: [ViteMinifyPlugin({})],
   };
