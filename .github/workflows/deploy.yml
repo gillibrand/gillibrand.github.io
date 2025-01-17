@@ -15,27 +15,36 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Setup Ruby for Jekyll
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.1
+          bundler-cache: true
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22.11.0
 
+      # - name: Install Jekyll dependencies
+      #   run: bundle install
+
       - name: Install `projects`
         run: |
-          cd projects
+          cd custom/projects
           npm ci
 
       - name: Build `projects`
         run: |
-          cd projects
+          cd custom/projects
           npm run build
 
-      - name: Build static root
-        run: cp index.html dist
+      - name: Build Jekyll site
+        run: bundle exec jekyll build
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: dist
+          publish_dir: ./_site
           destination_dir: ./
