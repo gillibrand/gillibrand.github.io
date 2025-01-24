@@ -38,7 +38,10 @@ async function buildLightbox(photo: HTMLImageElement) {
 
   const html = `
     <dialog class="lightbox">
-      <img class="lightbox__photo photo" src="${photo.currentSrc}" >
+      <img class="lightbox__photo photo" src="${photo.currentSrc}"
+      height="${photo.getAttribute("height")}"
+      width="${photo.getAttribute("width")}"
+      alt="${photo.alt}">
       <p class="lightbox__text opacity-0">${caption?.textContent || ""}</p>
     </dialog>`;
 
