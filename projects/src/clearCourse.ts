@@ -63,6 +63,15 @@ function initForm() {
     const greeting = greetingEl.value;
     showDialog(greeting);
   });
+
+  const key = "clearCourse.didGreeting";
+
+  if (customGreeting) {
+    if (!localStorage.getItem(key)) {
+      localStorage.setItem(key, "1");
+      showDialog(customGreeting);
+    }
+  }
 }
 
 initForm();
