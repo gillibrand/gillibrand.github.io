@@ -35,6 +35,10 @@ need to turn off top-margin since it's not really after anything visual. */
   margin-top: 1rem;
 }
 
+.mt-8 {
+  margin-top: 2rem;
+}
+
 .opacity-0 {
   opacity: 0;
 }

@@ -54,9 +54,19 @@ function showDialog(greeting: string) {
 
 function initForm() {
   const form = get<HTMLFormElement>("cc-form");
+
+  const greetingEl = get<HTMLInputElement>("cc-greeting");
+
+  const params = new URLSearchParams(location.search.slice(1));
+  const customGreeting = params.get("hi");
+
+  if (customGreeting) {
+    greetingEl.value = customGreeting;
+  }
+
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    const greeting = get<HTMLInputElement>("cc-message").value;
+    const greeting = greetingEl.value;
     showDialog(greeting);
   });
 }
