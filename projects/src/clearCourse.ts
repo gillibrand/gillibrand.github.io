@@ -69,24 +69,22 @@ function showDialog(greeting: string) {
 }
 
 function initForm() {
-  const form = get<HTMLFormElement>("cc-form");
-
   const greetingEl = get<HTMLInputElement>("cc-greeting");
 
-  const params = new URLSearchParams(location.search.slice(1));
-  const customGreeting = params.get("hi");
-
-  if (customGreeting) {
-    greetingEl.value = customGreeting;
-  }
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const greeting = greetingEl.value;
-    showDialog(greeting);
-  });
-
   const key = "clearCourse.didGreeting";
+
+  const params = new URLSearchParams(location.search.slice(1));
+  const customGreeting = (params.get("hi") || "").trim();
+  const savedGreeting = (localStorage.getItem(key) || "").trim();
+
+  greetingEl.value = customGreeting || savedGreeting || "Hello World!";
+
+  const formEl = get<HTMLFormElement>("cc-form");
+  formEl.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const currentGreeting = greetingEl.value;
+    showDialog(currentGreeting);
+  });
 
   if (customGreeting) {
     if (customGreeting !== localStorage.getItem(key)) {
