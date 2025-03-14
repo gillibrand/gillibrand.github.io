@@ -7,6 +7,7 @@ function get<T>(id: string) {
 }
 
 let sharedDialog: CourseClear | undefined;
+let shouldFocusGreeting = false;
 
 function getCourseClear() {
   if (sharedDialog) return sharedDialog;
@@ -22,6 +23,23 @@ function getCourseClear() {
   replayButton.addEventListener("click", () => {
     sharedDialog!.open = false;
     setTimeout(() => (sharedDialog!.open = true), 300);
+  });
+
+  const link = sharedDialog.querySelector("a[href='#course-clear']") as HTMLAnchorElement;
+  link.addEventListener("click", () => {
+    shouldFocusGreeting = true;
+    sharedDialog!.open = false;
+  });
+
+  sharedDialog.addEventListener("closed", () => {
+    if (shouldFocusGreeting) {
+      shouldFocusGreeting = false;
+      const input = get<HTMLInputElement>("cc-greeting");
+      if (input) {
+        input.focus();
+        input.select();
+      }
+    }
   });
 
   return sharedDialog;
@@ -67,8 +85,8 @@ function initForm() {
   const key = "clearCourse.didGreeting";
 
   if (customGreeting) {
-    if (!localStorage.getItem(key)) {
-      localStorage.setItem(key, "1");
+    if (customGreeting !== localStorage.getItem(key)) {
+      localStorage.setItem(key, customGreeting);
       showDialog(customGreeting);
     }
   }
