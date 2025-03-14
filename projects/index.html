@@ -375,9 +375,8 @@
 
         <!-- COURSE CLEAR web component -->
         <section id="course-clear">
-          <!-- Inserted into the dialog at runtime. This could be a child of a course-clear element
-          here, but that flashes while JavaScript is loading. Maybe just display:none until ready... -->
-          <template id="cc-details-template">
+          <!-- must load as none to avoid content flash. Removed once the JavaScript is loaded (since not open is hidden anyway) -->
+          <course-clear id="cc-dialog" close-on-esc close-on-outside style="display: none">
             <div class="Details">
               <div class="Details__sidebar">
                 <button class="Details-star-button" data-cc-replay="true" id="cc-replay-button" autofocus>
@@ -399,7 +398,7 @@
                 </div>
               </div>
             </div>
-          </template>
+          </course-clear>
 
           <h1 data-alt="Course Clear">Course Clear Web Component</h1>
 

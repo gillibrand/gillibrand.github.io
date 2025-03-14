@@ -1,3 +1,5 @@
+// ensure this is imported in whole for the side-effect of defining the component
+import "course-clear";
 import { CourseClear } from "course-clear";
 
 function get<T>(id: string) {
@@ -8,28 +10,19 @@ let sharedDialog: CourseClear | undefined;
 
 function getCourseClear() {
   if (sharedDialog) return sharedDialog;
+  sharedDialog = document.getElementById("cc-dialog") as CourseClear;
+  sharedDialog.style.display = "";
 
-  sharedDialog = new CourseClear();
-  sharedDialog.closeOnEscape = true;
-  sharedDialog.closeOnOutside = true;
-
-  const content = (document.getElementById("cc-details-template") as HTMLTemplateElement).content.cloneNode(
-    true
-  ) as HTMLDivElement;
-
-  const closeButton = content.querySelector("#cc-close-button") as HTMLButtonElement;
+  const closeButton = sharedDialog.querySelector("#cc-close-button") as HTMLButtonElement;
   closeButton.addEventListener("click", () => {
     sharedDialog!.open = false;
   });
 
-  const replayButton = content.querySelector("#cc-replay-button") as HTMLButtonElement;
+  const replayButton = sharedDialog.querySelector("#cc-replay-button") as HTMLButtonElement;
   replayButton.addEventListener("click", () => {
     sharedDialog!.open = false;
     setTimeout(() => (sharedDialog!.open = true), 300);
   });
-
-  sharedDialog.appendChild(content);
-  document.body.appendChild(sharedDialog);
 
   return sharedDialog;
 }
@@ -51,7 +44,6 @@ function showDialog(greeting: string) {
   }
 
   dialog.open = true;
-  // button.focus();
 }
 
 function initForm() {
