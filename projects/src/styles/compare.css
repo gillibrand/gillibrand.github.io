@@ -105,7 +105,6 @@
 
   &:focus-within:has(:focus-visible) {
     outline: solid 2px black;
-    outline-offset: 1px;
   }
 
   .toggle__checkbox {

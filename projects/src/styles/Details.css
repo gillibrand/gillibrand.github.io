@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "Super Mario Maker 2";
+  src: url("../fonts/super-mario-maker-2.otf") format("opentype");
+  font-display: swap;
+}
+
 .Details {
   /* base size for root; everything else in ems */
   font-size: 16px;

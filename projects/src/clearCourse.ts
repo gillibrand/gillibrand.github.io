@@ -11,6 +11,7 @@ function getCourseClear() {
 
   sharedDialog = new CourseClear();
   sharedDialog.closeOnEscape = true;
+  sharedDialog.closeOnOutside = true;
 
   const content = (document.getElementById("cc-details-template") as HTMLTemplateElement).content.cloneNode(
     true
