@@ -1,8 +1,9 @@
 // ensure this is imported in whole for the side-effect of defining the component
 import "course-clear";
 import { CourseClear } from "course-clear";
+import { isReduceMotion } from "./isReduceMotion";
 
-function get<T>(id: string) {
+function get<T = HTMLElement>(id: string) {
   return document.getElementById(id) as T;
 }
 
@@ -26,9 +27,12 @@ function getCourseClear() {
   });
 
   const link = sharedDialog.querySelector("a[href='#course-clear']") as HTMLAnchorElement;
-  link.addEventListener("click", () => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
     shouldFocusGreeting = true;
     sharedDialog!.open = false;
+
+    get("course-clear")?.scrollIntoView(true);
   });
 
   sharedDialog.addEventListener("closed", () => {
