@@ -196,7 +196,7 @@
         </section>
 
         <!-- GC INBOX -->
-        <section id="gcm-inbox">
+        <!-- <section id="gcm-inbox">
           <h3>Inbox Redesign</h3>
 
           <p>
@@ -218,7 +218,7 @@
             </button>
             <figcaption>Tagging a configuration by dropping it onto a folder-like tag.</figcaption>
           </figure>
-        </section>
+        </section> -->
 
         <section id="dng">
           <h2>DOORS Next</h2>
@@ -375,9 +375,9 @@
 
         <!-- COURSE CLEAR web component -->
         <section id="course-clear">
+          <!-- Inserted into the dialog at runtime. This could be a child of a course-clear element
+          here, but that flashes while JavaScript is loading. Maybe just display:none until ready... -->
           <template id="cc-details-template">
-            <!-- Inserted into the dialog at runtime. This could be a child of a course-clear element
-            here, but that flashes while JavaScript is loading. Maybe just display:none until ready... -->
             <div class="Details">
               <div class="Details__sidebar">
                 <button class="Details-star-button" data-cc-replay="true" id="cc-replay-button">

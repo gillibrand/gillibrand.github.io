@@ -10,6 +10,7 @@ function getCourseClear() {
   if (sharedDialog) return sharedDialog;
 
   sharedDialog = new CourseClear();
+  sharedDialog.closeOnEscape = true;
 
   const content = (document.getElementById("cc-details-template") as HTMLTemplateElement).content.cloneNode(
     true
