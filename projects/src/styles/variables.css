@@ -7,7 +7,6 @@
 
   --dull-yellow: #e4b343;
 
-  --dark-gray: #3c3c3c;
   --dark-gray: #252323;
 
   --body-bg: var(--yellow);
@@ -38,6 +37,14 @@
   --z-header: 300;
   --z-sidebar: 200;
   --z-navunderlay: 100;
+
+  --mario-red: #e60013;
+  --mario-green: #11b14c;
+  --mario-blue: #059fdb;
+  --mario-yellow: #ffd100;
+
+  /* --cc-custom-bg-color: #11b14c; */
+  --cc-custom-color: white;
 }
 
 /* :root body.dark {

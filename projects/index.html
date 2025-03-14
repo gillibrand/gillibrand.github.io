@@ -373,6 +373,70 @@
           </ul>
         </section>
 
+        <!-- COURSE CLEAR web component -->
+        <section id="course-clear">
+          <template id="cc-details-template">
+            <!-- Inserted into the dialog at runtime. This could be a child of a course-clear element
+            here, but that flashes while JavaScript is loading. Maybe just display:none until ready... -->
+            <div class="Details">
+              <div class="Details__sidebar">
+                <button class="Details-star-button" data-cc-replay="true" id="cc-replay-button">
+                  <span>↺</span>
+                  <span>Replay</span>
+                </button>
+              </div>
+
+              <div class="Details_main">
+                <p>
+                  This is demo of my video game-inspired Course Clear web component. It's available at
+                  <a href="https://www.npmjs.com/package/course-clear">course-clear on npm</a>.
+                </p>
+
+                <div class="Details__buttons">
+                  <button class="Details-button" id="cc-close-button">
+                    Back to <span style="white-space: nowrap">My Projects →</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </template>
+
+          <h1 data-alt="Course Clear" class="desktop">Course Clear Web Component</h1>
+
+          <p>A web component that opens a dialog with an animation inspired by Super Mario Maker.</p>
+
+          <div class="small-stack">
+            <span class="label" id="colors-label">Background <span class="sr-only">color</span></span>
+
+            <div class="color-group" aria-labelledby="colors-label" role="radiogroup">
+              <label class="color-radio color-radio--blue">
+                <span class="sr-only">blue</span>
+                <input type="radio" name="color" value="--mario-blue" checked />
+              </label>
+
+              <label class="color-radio color-radio--green">
+                <span class="sr-only">green</span>
+                <input type="radio" name="color" value="--mario-green" />
+              </label>
+              <label class="color-radio color-radio--red">
+                <span class="sr-only">red</span>
+                <input type="radio" name="color" value="--mario-red" />
+              </label>
+
+              <label class="color-radio color-radio--yellow">
+                <span class="sr-only">yellow</span>
+                <input type="radio" name="color" value="--mario-yellow" data-color="black" />
+              </label>
+            </div>
+
+            <label for="message"> Your message</label>
+            <form class="mini-form" id="cc-form">
+              <input type="text" value="Hello World!" class="text-input" id="cc-message" />
+              <button class="button">Try It</button>
+            </form>
+          </div>
+        </section>
+
         <!-- PLAYDATE -->
         <section id="pixgrid">
           <h2>Pix Grid for Playdate</h2>

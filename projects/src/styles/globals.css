@@ -209,3 +209,11 @@ ul,
 ol {
   list-style-type: square;
 }
+
+label,
+.label {
+  color: #5a411d;
+  color: var(--dark-gray);
+  font-size: 0.9375rem;
+  cursor: default;
+}
