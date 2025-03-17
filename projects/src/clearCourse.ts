@@ -74,10 +74,17 @@ function initForm() {
   const key = "clearCourse.didGreeting";
 
   const params = new URLSearchParams(location.search.slice(1));
-  const customGreeting = (params.get("hi") || "").trim();
+  let paramGreeting = (params.get("t") || params.get("hi") || "").trim();
+  if (params.has("hi")) {
+    // some old URLs have hello in them, so strip those and normalize with "Hello "
+    paramGreeting = paramGreeting.replace(/^(hello|hi) /i, "");
+    paramGreeting = "Hello " + paramGreeting;
+  }
+
   const savedGreeting = (localStorage.getItem(key) || "").trim();
 
-  greetingEl.value = customGreeting || savedGreeting || "Hello World!";
+  let customGreeting = paramGreeting || savedGreeting;
+  greetingEl.value = customGreeting || "Hello World!";
 
   const formEl = get<HTMLFormElement>("cc-form");
   formEl.addEventListener("submit", (e) => {
@@ -86,10 +93,10 @@ function initForm() {
     showDialog(currentGreeting);
   });
 
-  if (customGreeting) {
-    if (customGreeting !== localStorage.getItem(key)) {
-      localStorage.setItem(key, customGreeting);
-      showDialog(customGreeting);
+  if (paramGreeting) {
+    if (paramGreeting !== localStorage.getItem(key)) {
+      localStorage.setItem(key, paramGreeting);
+      showDialog(paramGreeting);
     }
   }
 }
