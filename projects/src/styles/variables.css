@@ -7,7 +7,6 @@
   --dark-gray: #252323;
 
   --bg-color: var(--yellow);
-  --bg-color-light: var(--light-yellow);
   --body-gradient: radial-gradient(#f9cf6c, var(--yellow));
 
   --text-color: black;
@@ -20,17 +19,16 @@
   --button-bg: #7d6739;
   --button-bg-hover: #a5894d;
   --button-bg-active: #bd9e5c;
+  --button-bg-light: var(--light-yellow);
 
   --dash-color: #a5894d;
 
   --shadow-color: rgba(0, 0, 0, 0.2);
-
-  --tint-text-color: #664f1b;
+  --photo-shadow: 3px 3px 10px var(--shadow-color);
 
   --nav-hover: #fcd57b;
-  --nav-active: #fedb8d;
   --nav-selected: #fedf9c;
-  --nav-selected-text-color: inherit;
+  --nav-selected-text-color: black;
 
   --hamburger-bg: black;
 
@@ -46,5 +44,40 @@
   --cc-custom-color: white;
 }
 
-:root.theme-vanilla {
+body.theme-snow {
+  --bg-color: white;
+  --bg-color: #f9f9f9;
+  --body-gradient: none;
+  --blue: #007aff;
+  --border-color: #d6d6d6;
+  --heading-color: #333;
+
+  --nav-hover: #e4e4e4;
+
+  --nav-selected: var(--blue);
+  --nav-selected-text-color: white;
+
+  .navmenu__entry {
+    clip-path: none;
+
+    &:active {
+      color: var(--nav-selected-text-color);
+    }
+  }
+
+  .navmenu__entry::before {
+    display: none;
+  }
+
+  .navmenu__entry::after {
+    border-radius: 999px;
+    display: none;
+  }
+
+  --button-bg: var(--blue);
+  --button-bg-light: white;
+  --button-bg-hover: #439af7;
+  --button-bg-active: #268cfa;
+
+  --photo-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.25);
 }

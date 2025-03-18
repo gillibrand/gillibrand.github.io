@@ -181,7 +181,7 @@ body.dark {
 
     width: 0.75rem;
     height: 0.75rem;
-    background-color: black;
+    background-color: var(--nav-selected-text-color);
     left: 0.5rem;
     top: 50%;
     translate: 0 -50%;
@@ -192,7 +192,7 @@ body.dark {
   }
 
   &:active {
-    background-color: var(--nav-active);
+    background-color: var(--nav-selected);
   }
 
   &.is-selected {

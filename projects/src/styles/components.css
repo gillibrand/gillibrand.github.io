@@ -51,6 +51,7 @@
 .compare {
   border: solid 10px white;
   box-shadow: 3px 3px 10px var(--shadow-color);
+  box-shadow: var(--photo-shadow);
   user-select: none;
   -webkit-user-select: none;
   position: relative;
