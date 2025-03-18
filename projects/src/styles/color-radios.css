@@ -59,6 +59,10 @@
   --radio-background-color: var(--mario-red);
 }
 
+.color-radio--yellow {
+  --radio-background-color: var(--mario-yellow);
+}
+
 .small-stack {
   display: grid;
   grid-template-columns: auto 1fr;
