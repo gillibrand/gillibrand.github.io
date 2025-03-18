@@ -42,6 +42,11 @@ header {
   nav {
     position: fixed;
     top: 2rem;
+    bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
   }
 
   max-height: 100dvh;
@@ -51,7 +56,7 @@ header {
     position: fixed;
     top: 3.5rem;
     left: 0rem;
-    padding: 2rem;
+    padding: 2rem 2rem 1rem 2rem;
     bottom: 0;
     background-color: var(--bg-color);
     z-index: var(--z-sidebar);
@@ -66,6 +71,7 @@ header {
 
     nav {
       position: static;
+      min-height: 100%;
     }
   }
 }
@@ -111,8 +117,8 @@ header {
 }
 
 .navmenu {
-  padding: 0;
   margin: 0;
+  /* margin-block-end: 1rem; */
   position: relative;
 
   /* work around for very short screens but are not in mobile layout yet. Ensure the sidebar font is

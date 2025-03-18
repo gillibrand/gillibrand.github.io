@@ -11,17 +11,11 @@
   </head>
   <body>
     <script>
-      // must run inline to set body class ASAP
-      // const darkMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-
-      // function setThemeClass() {
-      //   const className = darkMediaQuery.matches ? "dark" : "light";
-      //   document.body.classList.remove("dark", "light");
-      //   document.body.classList.add(className);
-      // }
-
-      // darkMediaQuery.addEventListener("change", setThemeClass);
-      // setThemeClass();
+      (function () {
+        let theme = localStorage.getItem("theme") || "sunny";
+        document.body.classList.add(theme);
+        console.info(">>> done");
+      })();
     </script>
     <header>
       <div class="inner-header">
@@ -48,6 +42,16 @@
           <ul class="navmenu" id="navmenu" role="list">
             <!-- JavaScript inserted -->
           </ul>
+
+          <label class="theme-button">
+            <span class="theme-icon" aria-hidden></span>
+            Theme
+            <select id="theme-select">
+              <option value="theme-sunny" selected>Sunny</option>
+              <option value="theme-snowy">Snowy</option>
+              <!-- <option value="sunny">Sombre</option> -->
+            </select>
+          </label>
         </nav>
       </aside>
 

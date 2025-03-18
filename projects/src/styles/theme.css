@@ -1,0 +1,50 @@
+label.theme-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.125rem 0.5rem;
+  margin-inline-start: 0.5rem;
+
+  border: solid 1px transparent;
+  border-radius: 9rem;
+  appearance: none;
+
+  font-size: min(1rem, var(--max-small-font));
+
+  &:hover,
+  &:focus-within:has(:focus-visible) {
+    background-color: rgba(0 0 0 /0.1);
+  }
+
+  &:focus-within:has(:focus-visible) {
+    outline: solid 2px black;
+  }
+
+  & > select {
+    appearance: none;
+    color: transparent;
+    border: none;
+    background: transparent;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.theme-icon {
+  font-size: 1.25rem;
+}
+
+.theme-sunny .theme-icon::after {
+  content: "☼";
+}
+
+.theme-snowy .theme-icon::after {
+  content: "❄";
+}
