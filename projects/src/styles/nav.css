@@ -1,6 +1,7 @@
 header {
   background-color: var(--bg-color);
   position: fixed;
+  will-change: transform;
   top: 0;
   inset-inline: 0;
 
@@ -63,6 +64,7 @@ header {
 
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
     display: none;
+    will-change: transform;
 
     body.nav-open & {
       transform: translateX(0);

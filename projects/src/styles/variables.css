@@ -48,7 +48,7 @@ body.theme-snowy {
   --bg-color: white;
   --bg-color: #f9f9f9;
   --body-gradient: none;
-  --blue: #007aff;
+  --blue: #286de3;
   --border-color: #d6d6d6;
   --heading-color: #333;
 
@@ -58,8 +58,6 @@ body.theme-snowy {
   --nav-selected-text-color: white;
 
   .navmenu__entry {
-    clip-path: none;
-
     &:active {
       color: var(--nav-selected-text-color);
     }
