@@ -52,8 +52,8 @@ h2 {
 }
 
 body {
-  background: var(--body-bg);
-  color: var(--body-color);
+  background: var(--bg-color);
+  color: var(--text-color);
 
   background-attachment: fixed;
   font-family: Trebuchet, Helvetica, Arial, sans-serif;
@@ -144,7 +144,7 @@ main figcaption {
   text-align: center;
   padding-top: 1rem;
   font-size: var(--font-size-small);
-  color: var(--tint-text-color);
+  color: var(--text-color-x-light);
   text-wrap: balance;
 
   @media (width > 768px) {
@@ -163,7 +163,7 @@ footer {
   justify-content: end;
   align-items: stretch;
 
-  color: var(--body-color);
+  color: var(--text-color);
 }
 
 .footer-content {

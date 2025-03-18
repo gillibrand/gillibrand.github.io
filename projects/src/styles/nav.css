@@ -1,5 +1,5 @@
 header {
-  background-color: var(--body-bg);
+  background-color: var(--bg-color);
   position: fixed;
   top: 0;
   inset-inline: 0;
@@ -53,7 +53,7 @@ header {
     left: 0rem;
     padding: 2rem;
     bottom: 0;
-    background-color: var(--body-bg);
+    background-color: var(--bg-color);
     z-index: var(--z-sidebar);
 
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
@@ -163,7 +163,7 @@ body.dark {
 
 .navmenu__entry {
   text-decoration: none;
-  color: var(--body-color);
+  color: var(--text-color);
   display: block;
   padding: 0 1.25rem 0 3.5rem;
   line-height: 2;
@@ -189,12 +189,10 @@ body.dark {
 
   &:hover {
     background-color: var(--nav-hover);
-    /* color: var(--nav-selected-text-color); */
   }
 
   &:active {
     background-color: var(--nav-active);
-    /* color: var(--nav-selected-text-color); */
   }
 
   &.is-selected {

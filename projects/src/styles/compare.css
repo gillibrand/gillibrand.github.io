@@ -109,8 +109,7 @@
 
   .toggle__checkbox {
     appearance: none;
-    background-color: var(--yellow);
-    background-color: var(--light-yellow);
+    background-color: var(--bg-color-light);
     display: block;
     pointer-events: none;
     transition: transform ease 200ms;
