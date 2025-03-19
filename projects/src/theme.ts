@@ -1,7 +1,7 @@
-const AllThemes = ["theme-sunny", "theme-snowy"] as const;
+const AllThemes = ["theme-bright", "theme-light"] as const;
 type Theme = (typeof AllThemes)[number];
 
-const DefaultTheme = "theme-sunny";
+const DefaultTheme = "theme-bright";
 
 function writeTheme(theme: Theme) {
   localStorage.setItem("theme", theme);
@@ -24,7 +24,6 @@ function loadTheme() {
 
 // Init select
 const themeSelect = document.getElementById("theme-select") as HTMLSelectElement;
-
 themeSelect.addEventListener("change", (e) => {
   const theme = themeSelect.value as Theme;
   document.body.classList.remove(...AllThemes);

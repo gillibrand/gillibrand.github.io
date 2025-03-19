@@ -9,12 +9,11 @@
     <script src="src/index.ts" type="module"></script>
     <link rel="me" href="https://metalverse.social/@jay" />
   </head>
-  <body>
+  <body class="theme-bright">
     <script>
       (function () {
-        let theme = localStorage.getItem("theme") || "sunny";
+        let theme = localStorage.getItem("theme") || "bright";
         document.body.classList.add(theme);
-        console.info(">>> done");
       })();
     </script>
     <header>
@@ -44,12 +43,12 @@
           </ul>
 
           <label class="theme-button">
-            <span class="theme-icon" aria-hidden></span>
+            <img src="images/sun.svg" alt="" class="bright-only" />
+            <img src="images/sun-filled.svg" alt="" class="light-only" />
             Theme
             <select id="theme-select">
-              <option value="theme-sunny" selected>Sunny</option>
-              <option value="theme-snowy">Snowy</option>
-              <!-- <option value="sunny">Sombre</option> -->
+              <option value="theme-bright" selected>Bright</option>
+              <option value="theme-light">Light</option>
             </select>
           </label>
         </nav>
