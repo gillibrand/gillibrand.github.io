@@ -1,6 +1,21 @@
 import { closeMenu } from "./hamburger";
 import { isReduceMotion } from "./isReduceMotion";
 
+let dummy: HTMLDivElement | undefined;
+
+function escapeHtml(text: string | null): string {
+  if (!text) return "";
+
+  if (!dummy) {
+    dummy = document.createElement("div");
+  }
+
+  dummy.textContent = text;
+  const safe = dummy.innerHTML;
+  dummy.innerHTML = "";
+  return safe;
+}
+
 const navmenu = document.getElementById("navmenu") as HTMLUListElement;
 
 function markSelected(a?: HTMLAnchorElement | HTMLHeadingElement) {
@@ -44,7 +59,7 @@ function initNavmenu() {
 
     linkFrags.push(
       `<li><a class="${classNames.join(" ")}" data-to="${sectionId}" href="#${sectionId}">
-        <span>${sectionTitle}</span>
+        <span>${escapeHtml(sectionTitle)}</span>
         </a></li>`
     );
   });
