@@ -95,7 +95,6 @@ function initForm() {
   });
 
   if (paramGreeting) {
-    console.info(">>> paramGreeting", paramGreeting);
     if (paramGreeting !== localStorage.getItem(key)) {
       localStorage.setItem(key, paramGreeting);
       showDialog(paramGreeting);
