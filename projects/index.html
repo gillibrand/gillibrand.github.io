@@ -9,11 +9,11 @@
     <script src="src/index.ts" type="module"></script>
     <link rel="me" href="https://metalverse.social/@jay" />
   </head>
-  <body class="theme-bright">
+  <body>
     <script>
       (function () {
-        let theme = localStorage.getItem("theme") || "bright";
-        document.body.className = theme;
+        let theme = localStorage.getItem("theme") || "theme-bright";
+        document.body.classList.add(theme);
       })();
     </script>
     <header>
