@@ -75,7 +75,8 @@ function initForm() {
 
   const params = new URLSearchParams(location.search.slice(1));
   let paramGreeting = (params.get("t") || params.get("hi") || "").trim();
-  if (params.has("hi")) {
+
+  if (paramGreeting && params.has("hi")) {
     // some old URLs have hello in them, so strip those and normalize with "Hello "
     paramGreeting = paramGreeting.replace(/^(hello|hi) /i, "");
     paramGreeting = "Hello " + paramGreeting;
@@ -94,6 +95,7 @@ function initForm() {
   });
 
   if (paramGreeting) {
+    console.info(">>> paramGreeting", paramGreeting);
     if (paramGreeting !== localStorage.getItem(key)) {
       localStorage.setItem(key, paramGreeting);
       showDialog(paramGreeting);
