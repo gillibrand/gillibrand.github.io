@@ -144,7 +144,7 @@ main figcaption {
   text-align: center;
   padding-top: 1rem;
   font-size: var(--font-size-small);
-  color: var(--text-color-x-light);
+  color: var(--text-color-light);
   text-wrap: balance;
 
   @media (width > 768px) {

@@ -184,24 +184,36 @@ function addOnSwipe(element: HTMLElement, callback: () => void) {
   let startY = 0;
   let endY = 0;
 
-  element.addEventListener("touchstart", (e) => {
-    startY = e.touches[0].clientY;
-    endY = startY;
-  });
+  element.addEventListener(
+    "touchstart",
+    (e) => {
+      startY = e.touches[0].clientY;
+      endY = startY;
+    },
+    { passive: true }
+  );
 
-  element.addEventListener("touchmove", (e) => {
-    endY = e.touches[0].clientY;
-  });
+  element.addEventListener(
+    "touchmove",
+    (e) => {
+      endY = e.touches[0].clientY;
+    },
+    { passive: true }
+  );
 
-  element.addEventListener("touchend", (e) => {
-    const diff = endY - startY;
+  element.addEventListener(
+    "touchend",
+    (e) => {
+      const diff = endY - startY;
 
-    if (Math.abs(diff) > swipeThreshold) {
-      e.preventDefault();
-      callback();
-    }
+      if (Math.abs(diff) > swipeThreshold) {
+        e.preventDefault();
+        callback();
+      }
 
-    startY = 0;
-    endY = 0;
-  });
+      startY = 0;
+      endY = 0;
+    },
+    { passive: true }
+  );
 }

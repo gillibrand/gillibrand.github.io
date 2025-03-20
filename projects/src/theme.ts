@@ -1,4 +1,4 @@
-const AllThemes = ["theme-bright", "theme-light"] as const;
+const AllThemes = ["theme-bright", "theme-light", "theme-dark"] as const;
 type Theme = (typeof AllThemes)[number];
 
 const DefaultTheme = "theme-bright";

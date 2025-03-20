@@ -10,8 +10,7 @@
   --body-gradient: radial-gradient(#f9cf6c, var(--yellow));
 
   --text-color: black;
-  --text-color-light: var(--dark-gray);
-  --text-color-x-light: #664f1b;
+  --text-color-light: #664f1b;
   --heading-color: black;
 
   --border-color: var(--mustard-yellow);
@@ -78,4 +77,52 @@ body.theme-light {
   --button-bg-active: #268cfa;
 
   --photo-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.25);
+}
+
+body.theme-dark {
+  --bg-color: #3c3c3c;
+  --text-color: #bbb;
+  --text-color-light: #999;
+  --body-gradient: none;
+  --blue: #3b6cdb;
+  --border-color: #d6d6d6;
+  --heading-color: #d6d6d6;
+
+  --nav-hover: #4d4d4d;
+
+  --nav-selected: var(--blue);
+  --nav-selected-text-color: white;
+
+  .navmenu__entry {
+    &:active {
+      color: var(--nav-selected-text-color);
+    }
+  }
+
+  .navmenu__entry::before {
+    display: none;
+  }
+
+  .navmenu__entry::after {
+    border-radius: 999px;
+    display: none;
+  }
+
+  --button-bg: var(--blue);
+  --button-bg-light: white;
+  --button-bg-hover: #439af7;
+  --button-bg-active: #268cfa;
+
+  --photo-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.25);
+
+  --hamburger-bg: var(--border-color);
+
+  label,
+  .label {
+    color: #d6d6d6;
+  }
+
+  #jay-head-dark {
+    filter: drop-shadow(3px 5px 10px rgba(0, 0, 0, 0.75));
+  }
 }

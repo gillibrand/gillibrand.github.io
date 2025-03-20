@@ -11,10 +11,15 @@ label.theme-button {
   appearance: none;
 
   font-size: 1rem;
+  color: var(--text-color);
 
   &:hover,
   &:focus-within:has(:focus-visible) {
     background-color: rgba(0 0 0 /0.1);
+
+    .theme-dark & {
+      background-color: rgba(255 255 255 /0.1);
+    }
 
     /* down arrow */
     &::after {
@@ -24,8 +29,7 @@ label.theme-button {
       top: 0.75rem;
       width: 0.75rem;
       height: 0.375rem;
-      background-color: rgba(0 0 0 / 0.3);
-      background-color: black;
+      background-color: var(--text-color);
       clip-path: polygon(0 0, 100% 0, 50% 100%, 0 0);
     }
   }
@@ -40,7 +44,7 @@ label.theme-button {
     border: none;
     background: transparent;
     position: absolute;
-    inset: 0;
+    inset: -2px;
     z-index: 1;
     cursor: pointer;
 
@@ -56,7 +60,8 @@ label.theme-button {
 }
 
 .bright-only,
-.light-only {
+.light-only,
+.dark-only {
   display: none;
 }
 
@@ -66,4 +71,12 @@ label.theme-button {
 
 .theme-light .light-only {
   display: initial;
+}
+
+.theme-dark .dark-only {
+  display: initial;
+}
+
+.theme-dark .dark-hide {
+  display: none;
 }
