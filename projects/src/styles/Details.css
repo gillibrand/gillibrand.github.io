@@ -44,7 +44,7 @@
   display: grid;
   gap: 1.25em;
   grid-template-columns: 1fr;
-  font-size: 2em;
+  font-size: min(2em, 4vh);
 
   & > p {
     margin: 0;
