@@ -91,7 +91,7 @@
   align-items: center;
 
   font-family: inherit;
-  font-size: 2em;
+  font-size: min(2em, 4vh);
   gap: 0.75em;
 
   & > :first-child {
