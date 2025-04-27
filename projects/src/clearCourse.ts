@@ -2,6 +2,12 @@
 import "course-clear";
 import { CourseClear } from "course-clear";
 
+/**
+ * Converts a string to ROT13 encoding. This is just to obfuscate the greeting message in URLs.
+ *
+ * @param str The string to be encoded
+ * @returns The encoded or decoded string since ROT13 is symmetric.
+ */
 function rot13(str: string | null) {
   if (null === str) return "";
 
@@ -10,7 +16,6 @@ function rot13(str: string | null) {
     return String.fromCharCode(((char.charCodeAt(0) - base + 13) % 26) + base);
   });
 }
-console.info('>>> rot13("hi")', rot13("hi"));
 
 function get<T = HTMLElement>(id: string) {
   return document.getElementById(id) as T;
