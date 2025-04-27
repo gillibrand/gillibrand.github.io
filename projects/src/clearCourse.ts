@@ -1,7 +1,16 @@
 // ensure this is imported in whole for the side-effect of defining the component
 import "course-clear";
 import { CourseClear } from "course-clear";
-import { isReduceMotion } from "./isReduceMotion";
+
+function rot13(str: string | null) {
+  if (null === str) return "";
+
+  return str.replace(/[a-zA-Z]/g, (char: string) => {
+    const base = char <= "Z" ? 65 : 97; // 'A' or 'a'
+    return String.fromCharCode(((char.charCodeAt(0) - base + 13) % 26) + base);
+  });
+}
+console.info('>>> rot13("hi")', rot13("hi"));
 
 function get<T = HTMLElement>(id: string) {
   return document.getElementById(id) as T;
@@ -74,7 +83,7 @@ function initForm() {
   const key = "clearCourse.didGreeting";
 
   const params = new URLSearchParams(location.search.slice(1));
-  let paramGreeting = (params.get("t") || params.get("hi") || "").trim();
+  let paramGreeting = (params.get("t") ?? params.get("hi") ?? rot13(params.get("r")) ?? "").trim();
 
   if (paramGreeting && params.has("hi")) {
     // some old URLs have hello in them, so strip those and normalize with "Hello "
