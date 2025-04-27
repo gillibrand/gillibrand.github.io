@@ -90,7 +90,7 @@ function initForm() {
   const params = new URLSearchParams(location.search.slice(1));
   let paramGreeting = (params.get("t") ?? params.get("hi") ?? rot13(params.get("r")) ?? "").trim();
 
-  if (paramGreeting && params.has("hi")) {
+  if (paramGreeting && (params.has("hi") || params.has("r"))) {
     // some old URLs have hello in them, so strip those and normalize with "Hello "
     paramGreeting = paramGreeting.replace(/^(hello|hi) /i, "");
     paramGreeting = "Hello " + paramGreeting;
