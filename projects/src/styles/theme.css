@@ -48,6 +48,10 @@ label.theme-button {
     z-index: 1;
     cursor: pointer;
 
+    option {
+      color: black;
+    }
+
     &:focus {
       outline: none;
     }
