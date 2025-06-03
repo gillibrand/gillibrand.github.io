@@ -22,8 +22,8 @@
 
   --dash-color: #a5894d;
 
-  --shadow-color: rgba(0, 0, 0, 0.2);
-  --photo-shadow: 3px 3px 10px var(--shadow-color);
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --photo-shadow: 3px 3px 15px var(--shadow-color);
 
   --nav-hover: #fcd57b;
   --nav-selected: #fedf9c;
