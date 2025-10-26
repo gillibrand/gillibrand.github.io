@@ -15,21 +15,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22.11.0
-
-      - name: Install `projects`
-        run: |
-          cd projects
-          npm ci
-
-      - name: Build `projects`
-        run: |
-          cd projects
-          npm run build
-
       - name: Build static root
         run: cp index.html dist
 
